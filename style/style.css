@@ -128,12 +128,21 @@ nav {
   border-radius: 5px;
 }
 
-.div-media {
+.image-card {
   margin-bottom: 25px;
 }
 
-.image-name {
+.info-card {
   color: #901C1C;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-container {
+  display: flex;
+}
+.info-container i {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

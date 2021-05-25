@@ -14,6 +14,26 @@ fetch("../data/FishEyeData.json")
     for (let i = 0; i < media.length; i++) {
       let photographerId = media[i].photographerId;
       if (photographerId == id && media[i].hasOwnProperty("image")) {
+        portfolio.innerHTML += `<div class="image-card">
+        <img class="image-media" src="${
+          "../img/" + id + "/" + media[i].image
+        }" alt="${media[i].title}">
+        <div class="info-card">
+            <p class ="image-name">${media[i].title}</p>
+            <div class="info-container">
+                <p class="likes">${media[i].likes}</p>
+                <i class="far fa-heart"></i>
+            </div>
+        </div>
+    </div>`;
+      }
+    }
+  });
+
+console.log(photographerInfo);
+console.log(portfolio);
+
+/*if (photographerId == id && media[i].hasOwnProperty("image")) {
         let divMedia = document.createElement("div");
         divMedia.className = "div-media";
         portfolio.appendChild(divMedia);
@@ -29,9 +49,12 @@ fetch("../data/FishEyeData.json")
         imageName.className = "image-name";
         imageName.textContent = media[i].title;
         imageInfoContent.appendChild(imageName);
+        imageInfoContent.className = "image-info-content";
+        let likes = document.createElement("p");
+        likes.textContent = media[i].likes;
+        imageInfoContent.appendChild(likes);
+        let heart = document.createElement("i");
+        heart.className = "far fa-heart";
+        imageInfoContent.appendChild(heart);
       }
-    }
-  });
-
-console.log(photographerInfo);
-console.log(portfolio);
+      */

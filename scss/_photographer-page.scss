@@ -11,10 +11,23 @@
   border-radius: 5px;
 }
 
-.div-media {
-  margin-bottom: 25px;
+.image-card{
+  margin-bottom:25px;
 }
 
-.image-name{
+.info-card{
   color:$primary-color;
+  display: flex;
+  justify-content:space-between;
 }
+
+.info-container{
+  display: flex;
+  i{
+    margin-left:10px;
+  }
+}
+
+
+
+

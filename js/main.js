@@ -1,20 +1,19 @@
 const photographerDisplay = document.querySelector(".photographer-display");
 
-fetch("./data/FishEyeData.json")
+fetch("data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
     let photographers = data.photographers;
     console.log(photographers);
-
     for (let i = 0; i < photographers.length; i++) {
       let section = document.createElement("section");
+      section.className = "photographer-card";
       photographerDisplay.appendChild(section);
       let link = document.createElement("a");
       section.appendChild(link);
       let image = document.createElement("img");
-      let imageID =
-        "./img/Photographers_ID_Photos/" + photographers[i].portrait;
-      image.src = imageID;
+      let imageID = photographers[i].portrait;
+      image.src = "img/photographers/" + imageID;
       link.appendChild(image);
       let photographerName = document.createElement("h2");
       photographerName.textContent = photographers[i].name;

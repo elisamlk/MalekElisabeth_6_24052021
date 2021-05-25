@@ -12,6 +12,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 100px;
 }
 header h1 {
   color: #901C1C;
@@ -19,6 +20,7 @@ header h1 {
 }
 header img {
   width: 220px;
+  object-fit: cover;
 }
 
 ul {
@@ -47,6 +49,30 @@ nav {
   left: 0;
 }
 
+.photographer-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.photographer-card img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.photographer-card h2 {
+  color: #D3573C;
+}
+
+.photographer-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
   header img {
     width: 150px;
@@ -59,6 +85,7 @@ nav {
 @media screen and (max-width: 576px) {
   header {
     flex-direction: column;
+    margin-bottom: 150px;
   }
 
   nav {

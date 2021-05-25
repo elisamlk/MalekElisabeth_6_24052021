@@ -18,11 +18,32 @@ fetch("data/FishEyeData.json")
       let photographerName = document.createElement("h2");
       photographerName.textContent = photographers[i].name;
       section.appendChild(photographerName);
-      //let location = document.createElement("div");
-      //let city = document.createElement("p");
-      //let country = document.createElement("p");
-      //let tagLine = document.createElement("p");
-      //let price = document.createElement("p");
+      let location = document.createElement("div");
+      location.className = "location";
+      section.appendChild(location);
+      let city = document.createElement("p");
+      city.className = "city";
+      city.textContent = photographers[i].city + ", ";
+      location.appendChild(city);
+      let country = document.createElement("p");
+      country.className = "country";
+      country.textContent = photographers[i].country;
+      location.appendChild(country);
+      let tagLine = document.createElement("p");
+      tagLine.className = "tagline";
+      tagLine.textContent = photographers[i].tagline;
+      section.appendChild(tagLine);
+      let price = document.createElement("p");
+      price.className = "price";
+      price.textContent = photographers[i].price + "€/jour ";
+      section.appendChild(price);
+      let ul = document.createElement("ul");
+      section.appendChild(ul);
+      for (let t = 0; t < photographers[i].tags.length; t++) {
+        let li = document.createElement("li");
+        li.textContent = photographers[i].tags[t];
+        ul.appendChild(li);
+      }
     }
   });
 

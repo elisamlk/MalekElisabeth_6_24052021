@@ -63,6 +63,7 @@ nav {
   }
   h2 {
     color: $secondary-color;
+    margin:10px 0 10px 0;
   }
 }
 
@@ -70,6 +71,19 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.location {
+  color: $primary-color;
+  display: flex;
+}
+
+.tagline{
+  margin:5px 0 5px 0;
+}
+
+.price{
+  color:$tag-border;
 }
 
 /*MEDIA QUERIES*/

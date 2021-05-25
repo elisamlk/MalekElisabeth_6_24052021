@@ -64,12 +64,26 @@ nav {
 }
 .photographer-card h2 {
   color: #D3573C;
+  margin: 10px 0 10px 0;
 }
 
 .photographer-display {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.location {
+  color: #901C1C;
+  display: flex;
+}
+
+.tagline {
+  margin: 5px 0 5px 0;
+}
+
+.price {
+  color: #525252;
 }
 
 /*MEDIA QUERIES*/

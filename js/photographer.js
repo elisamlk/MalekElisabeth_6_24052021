@@ -6,7 +6,7 @@ console.log(params);
 let id = params.get("id");
 console.log(id);
 
-fetch("/data/FishEyeData.json")
+fetch("../data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
     let media = data.media;

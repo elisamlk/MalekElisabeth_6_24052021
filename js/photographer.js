@@ -19,7 +19,7 @@ fetch("/data/FishEyeData.json")
         portfolio.appendChild(divMedia);
         let imageMedia = document.createElement("img");
         imageMedia.className = "image-media";
-        let imageContent = "/img/" + id + "/" + media[i].image;
+        let imageContent = "../img/" + id + "/" + media[i].image;
         console.log(imageContent);
         imageMedia.src = imageContent;
         divMedia.appendChild(imageMedia);

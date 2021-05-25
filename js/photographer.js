@@ -26,6 +26,20 @@ fetch("../data/FishEyeData.json")
             </div>
         </div>
     </div>`;
+      } else if (photographerId == id && media[i].hasOwnProperty("video")) {
+        portfolio.innerHTML += `<div class="image-card">
+        <video class="image-media" controls src="${
+          "../img/" + id + "/" + media[i].video
+        }
+        alt="${media[i].title}"></video>
+        <div class="info-card">
+            <p class ="image-name">${media[i].title}</p>
+            <div class="info-container">
+                <p class="likes">${media[i].likes}</p>
+                <i class="far fa-heart"></i>
+            </div>
+        </div>
+    </div>`;
       }
     }
   });

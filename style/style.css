@@ -65,6 +65,10 @@ nav {
 .photographer-card h2 {
   color: #D3573C;
   margin: 10px 0 10px 0;
+  text-align: center;
+}
+.photographer-card a {
+  text-decoration: none;
 }
 
 .photographer-display {

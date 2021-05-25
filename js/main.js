@@ -10,6 +10,7 @@ fetch("data/FishEyeData.json")
       section.className = "photographer-card";
       photographerDisplay.appendChild(section);
       let link = document.createElement("a");
+      link.href ="html/photographer.html?id=" + photographers[i].id;
       section.appendChild(link);
       let image = document.createElement("img");
       let imageID = photographers[i].portrait;
@@ -17,7 +18,7 @@ fetch("data/FishEyeData.json")
       link.appendChild(image);
       let photographerName = document.createElement("h2");
       photographerName.textContent = photographers[i].name;
-      section.appendChild(photographerName);
+      link.appendChild(photographerName);
       let location = document.createElement("div");
       location.className = "location";
       section.appendChild(location);

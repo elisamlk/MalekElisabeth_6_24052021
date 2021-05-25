@@ -23,6 +23,12 @@ fetch("/data/FishEyeData.json")
         console.log(imageContent);
         imageMedia.src = imageContent;
         divMedia.appendChild(imageMedia);
+        let imageInfoContent = document.createElement("div");
+        divMedia.appendChild(imageInfoContent);
+        let imageName = document.createElement("p");
+        imageName.className = "image-name";
+        imageName.textContent = media[i].title;
+        imageInfoContent.appendChild(imageName);
       }
     }
   });

@@ -29,9 +29,7 @@ fetch("../data/FishEyeData.json")
       } else if (photographerId == id && media[i].hasOwnProperty("video")) {
         portfolio.innerHTML += `<div class="image-card">
         <video class="image-media" controls src="${
-          "../img/" + id + "/" + media[i].video
-        }
-        alt="${media[i].title}"></video>
+          "../img/" + id + "/" + media[i].video}" alt="${media[i].title}"></video>
         <div class="info-card">
             <p class ="image-name">${media[i].title}</p>
             <div class="info-container">

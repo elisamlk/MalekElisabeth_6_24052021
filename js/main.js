@@ -6,46 +6,26 @@ fetch("data/FishEyeData.json")
     let photographers = data.photographers;
     console.log(photographers);
     for (let i = 0; i < photographers.length; i++) {
-      let section = document.createElement("section");
-      section.className = "photographer-card";
-      photographerDisplay.appendChild(section);
-      let link = document.createElement("a");
-      link.href ="html/photographer.html?id=" + photographers[i].id;
-      section.appendChild(link);
-      let image = document.createElement("img");
-      let imageID = photographers[i].portrait;
-      image.src = "img/photographers/" + imageID;
-      link.appendChild(image);
-      let photographerName = document.createElement("h2");
-      photographerName.textContent = photographers[i].name;
-      link.appendChild(photographerName);
-      let location = document.createElement("div");
-      location.className = "location";
-      section.appendChild(location);
-      let city = document.createElement("p");
-      city.className = "city";
-      city.textContent = photographers[i].city + ", ";
-      location.appendChild(city);
-      let country = document.createElement("p");
-      country.className = "country";
-      country.textContent = photographers[i].country;
-      location.appendChild(country);
-      let tagLine = document.createElement("p");
-      tagLine.className = "tagline";
-      tagLine.textContent = photographers[i].tagline;
-      section.appendChild(tagLine);
-      let price = document.createElement("p");
-      price.className = "price";
-      price.textContent = photographers[i].price + "€/jour ";
-      section.appendChild(price);
-      let ul = document.createElement("ul");
-      section.appendChild(ul);
-      for (let t = 0; t < photographers[i].tags.length; t++) {
-        let li = document.createElement("li");
-        li.textContent = photographers[i].tags[t];
-        ul.appendChild(li);
-      }
+      photographerDisplay.innerHTML += `<section class="photographer-card">
+        <a class="link" href="html/photographer.html?id=${photographers[i].id}">
+          <img src="img/photographers/${photographers[i].portrait}" alt="">
+          <h2>${photographers[i].name}</h2>
+        </a>
+        <div class="location">
+          <p class="city">${photographers[i].city}</p>
+          <p class="country">${photographers[i].country}</p> 
+        </div>
+        <p class="tagline">${photographers[i].tagline}</p>
+        <p class="price">${photographers[i].price} €/jour</p>
+        <ul>
+        <li>${photographers[i].tags[0]}</li>
+        </ul>
+    </section>`;
     }
   });
-
 console.log(photographerDisplay);
+
+/*for(let t=0; t< photographers[i].tags.length; t++){
+  `<li>${photographers[i].tags[t]}</li>`
+}}
+*/

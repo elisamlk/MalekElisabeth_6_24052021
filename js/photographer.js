@@ -1,8 +1,8 @@
 const photographerInfo = document.querySelector(".photographer-info");
 const portfolio = document.querySelector(".portfolio");
+
 let params = new URLSearchParams(document.location.search);
 console.log(params);
-
 let id = params.get("id");
 console.log(id);
 
@@ -29,7 +29,8 @@ fetch("../data/FishEyeData.json")
       } else if (photographerId == id && media[i].hasOwnProperty("video")) {
         portfolio.innerHTML += `<div class="image-card">
         <video class="image-media" controls src="${
-          "../img/" + id + "/" + media[i].video}" alt="${media[i].title}"></video>
+          "../img/" + id + "/" + media[i].video
+        }" alt="${media[i].title}"></video>
         <div class="info-card">
             <p class ="image-name">${media[i].title}</p>
             <div class="info-container">
@@ -41,6 +42,8 @@ fetch("../data/FishEyeData.json")
       }
     }
   });
+
+
 
 console.log(photographerInfo);
 console.log(portfolio);
@@ -70,3 +73,5 @@ console.log(portfolio);
         imageInfoContent.appendChild(heart);
       }
       */
+
+      

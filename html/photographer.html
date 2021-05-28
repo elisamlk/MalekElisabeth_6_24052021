@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <script src="https://kit.fontawesome.com/8dacf958f8.js" crossorigin="anonymous"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>FishEye</title>
-  </head>
-  <body>
-    <header>
-      <a href="../index.html">
-        <img src="../img/logo/logo.png" alt="FishEye Home Page" />
-      </a>
-    </header>
-    <main class="photographer-page">
-      <section class="photographer-info"></section>
 
-      <section class="portfolio"></section>
-    </main>
-    <script src="../js/photographer.js"></script>
-    
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <script src="https://kit.fontawesome.com/8dacf958f8.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
+  <title>FishEye</title>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">
+      <img src="../img/logo/logo.png" alt="FishEye Home Page" />
+    </a>
+  </header>
+  <main class="photographer-page">
+    <section class="photographer-info"></section>
+
+    <section class="portfolio"></section>
+
+    <div class="bground">
+      <div class="content">
+        <span class="close"></span>
+        <div class="modal-body">
+          <form class="form" name="reserve" action="index.html" method="get">
+            <div class="formData">
+              <label>Prénom</label><br>
+              <input class="text-control" type="text" id="first" name="first" /><br>
+              <span class="first-error error"></span>
+            </div>
+            <div class="formData">
+              <label>Nom</label><br>
+              <input class="text-control" type="text" id="last" name="last" /><br>
+              <span class="last-error error"></span>
+            </div>
+            <div class="formData">
+              <label>E-mail</label><br>
+              <input class="text-control" id="email" name="email" /><br>
+              <span class="email-error error"></span>
+            </div>
+            <div class="formData">
+              <label>Votre message</label><br>
+              <input class="text-control" id="email" name="email" /><br>
+              <span class="email-error error"></span>
+            </div>
+            <input class="btn-submit" type="submit" value="Envoyer" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <script src="../js/photographer.js"></script>
+</body>
+
 </html>

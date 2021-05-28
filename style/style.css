@@ -185,9 +185,14 @@ nav {
   }
 
   .photographer-info .id-photo {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
+}
+.display-form {
+  margin: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

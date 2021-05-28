@@ -28,18 +28,18 @@
   }
 }
 
-.photographer-page{
- padding:0 20px 0 20px;
+.photographer-page {
+  padding: 0 20px 0 20px;
 }
 
 .photographer-info {
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 100px;
   background-color: $background-color;
-  height:240px;
-  border-radius:5px;
+  height: 240px;
+  border-radius: 5px;
   h2 {
     color: $secondary-color;
     font-weight: 400;
@@ -65,8 +65,16 @@
   .contact-btn {
     display: none;
   }
-  .photographer-info .id-photo{
-    width:120px;
-    height:120px;
+  .photographer-info .id-photo {
+    width: 150px;
+    height: 150px;
   }
 }
+
+.display-form {
+  margin: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
+}
+
+

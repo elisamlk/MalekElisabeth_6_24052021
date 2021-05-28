@@ -9,6 +9,34 @@ console.log(id);
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
+    let photographers = data.photographers;
+    console.log(photographers);
+    for (let i = 0; i < photographers.length; i++) {
+      let photographerId = photographers[i].id;
+      if (photographerId == id) {
+        photographerInfo.innerHTML += `<div class="info">
+        <h2>${photographers[i].name}</h2>
+        <div class="location">
+          <p class="city">${photographers[i].city},</p>
+          <p class="country">${photographers[i].country}</p>
+        </div>
+        <p class="tagline">${photographers[i].tagline}</p>
+        <ul>
+        <li>${photographers[i].tags[0]}</li>
+      </ul>
+      </div>
+      <button class="contact-btn">Contactez-moi</button>
+      <img class="id-photo" src="${
+        "../img/photographers/" + photographers[i].portrait
+      }" alt="">
+      `;
+      }
+    }
+  });
+
+fetch("../data/FishEyeData.json")
+  .then((response) => response.json())
+  .then((data) => {
     let media = data.media;
     console.log(media);
     for (let i = 0; i < media.length; i++) {
@@ -21,7 +49,7 @@ fetch("../data/FishEyeData.json")
         <div class="info-card">
             <p class ="image-name">${media[i].title}</p>
             <div class="info-container">
-                <p class="likes">${media[i].likes}</p>
+                <p class="likes">${media[i].likes}</p> 
                 <i class="far fa-heart"></i>
             </div>
         </div>
@@ -43,35 +71,5 @@ fetch("../data/FishEyeData.json")
     }
   });
 
-
-
 console.log(photographerInfo);
 console.log(portfolio);
-
-/*if (photographerId == id && media[i].hasOwnProperty("image")) {
-        let divMedia = document.createElement("div");
-        divMedia.className = "div-media";
-        portfolio.appendChild(divMedia);
-        let imageMedia = document.createElement("img");
-        imageMedia.className = "image-media";
-        let imageContent = "../img/" + id + "/" + media[i].image;
-        console.log(imageContent);
-        imageMedia.src = imageContent;
-        divMedia.appendChild(imageMedia);
-        let imageInfoContent = document.createElement("div");
-        divMedia.appendChild(imageInfoContent);
-        let imageName = document.createElement("p");
-        imageName.className = "image-name";
-        imageName.textContent = media[i].title;
-        imageInfoContent.appendChild(imageName);
-        imageInfoContent.className = "image-info-content";
-        let likes = document.createElement("p");
-        likes.textContent = media[i].likes;
-        imageInfoContent.appendChild(likes);
-        let heart = document.createElement("i");
-        heart.className = "far fa-heart";
-        imageInfoContent.appendChild(heart);
-      }
-      */
-
-      

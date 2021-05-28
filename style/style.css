@@ -146,11 +146,18 @@ nav {
   margin-left: 10px;
 }
 
+.photographer-page {
+  padding: 0 20px 0 20px;
+}
+
 .photographer-info {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 100px;
+  background-color: #FAFAFA;
+  height: 240px;
+  border-radius: 5px;
 }
 .photographer-info h2 {
   color: #D3573C;

@@ -23,38 +23,37 @@
 
     <section class="portfolio"></section>
 
-    <div class="bground">
+    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalContact">
       <div class="content">
-        <h1>Contactez-moi</h1>
-        <span class="close"></span>
+        <span class="close-modal"></span>
         <div class="modal-body">
+          <h1>Contactez-moi</h1>
           <form class="form" name="reserve" action="index.html" method="get">
             <div class="formData">
-              <label>Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" /><br>
+              <label>Prénom</label>
+              <input class="text-control" type="text" id="first" name="first" />
               <span class="first-error error"></span>
             </div>
             <div class="formData">
-              <label>Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" /><br>
+              <label>Nom</label>
+              <input class="text-control" type="text" id="last" name="last" />
               <span class="last-error error"></span>
             </div>
             <div class="formData">
-              <label>E-mail</label><br>
-              <input class="text-control" id="email" name="email" /><br>
+              <label>E-mail</label>
+              <input class="text-control" id="email" name="email" />
               <span class="email-error error"></span>
             </div>
             <div class="formData">
-              <label>Votre message</label><br>
-              <input class="text-control" id="email" name="email" /><br>
-              <span class="email-error error"></span>
+              <label>Votre message</label>
+              <textarea name="precisions" id="precisions" cols="40" rows="4"></textarea>
+              <span class="message-error error"></span>
             </div>
             <input class="btn-submit" type="submit" value="Envoyer" />
           </form>
         </div>
       </div>
     </div>
-
   </main>
   <script src="../js/photographer.js"></script>
 </body>

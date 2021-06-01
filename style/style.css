@@ -179,17 +179,28 @@ nav {
   border-radius: 5px;
 }
 
-.bground {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(250, 250, 250, 0.4);
-}
+@media screen and (max-width: 576px) {
+  .contact-btn {
+    display: none;
+  }
 
+  .photographer-info .id-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+/*
+.modal {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+*/
 .content {
   margin: 5% auto;
   width: 100%;
@@ -236,24 +247,8 @@ input {
   top: 15px;
   width: 32px;
   height: 32px;
-  opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
-}
-
-@media screen and (max-width: 576px) {
-  .contact-btn {
-    display: none;
-  }
-
-  .photographer-info .id-photo {
-    width: 150px;
-    height: 150px;
-  }
-
-  .content {
-    width: 300px;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

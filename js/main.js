@@ -17,15 +17,15 @@ fetch("data/FishEyeData.json")
         </div>
         <p class="tagline">${photographers[i].tagline}</p>
         <p class="price">${photographers[i].price} €/jour</p>
-        <ul>
-        <li>${photographers[i].tags[0]}</li>
-        </ul>
+        <nav>
+         <a>${photographers[i].tags[0]}</a>
+        </nav>
     </section>`;
     }
   });
 console.log(photographerDisplay);
 
 /*for(let t=0; t< photographers[i].tags.length; t++){
-  `<li>${photographers[i].tags[t]}</li>`
+  `<a>${photographers[i].tags[t]}</a>`
 }}
 */

@@ -1,3 +1,10 @@
+.header-page {
+  img {
+    @include logo;
+  }
+  padding: 20px;
+}
+
 .portfolio {
   display: flex;
   flex-wrap: wrap;
@@ -53,15 +60,17 @@
 }
 
 .contact-btn {
-  background-color: $primary-color;
-  color: white;
-  font-size: 20px;
-  border: none;
-  padding: 20px 10px 20px 10px;
-  border-radius: 5px;
+  @include button-style;
+}
+
+.contact-btn:hover {
+  @include button-style-hover;
 }
 
 @media screen and (max-width: 576px) {
+  .header-page img {
+    @include logo-mobile;
+  }
   .contact-btn {
     display: none;
   }

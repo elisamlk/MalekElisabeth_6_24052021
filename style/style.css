@@ -7,29 +7,33 @@
   font-family: Roboto, sans-serif;
 }
 
-header {
+.main-header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 100px;
 }
-header h1 {
+.main-header h1 {
   color: #901C1C;
   font-weight: 400;
 }
-header img {
+.main-header img {
   width: 220px;
   object-fit: cover;
 }
 
-ul {
+.navigation {
+  position: absolute;
+  margin-top: 125px;
+  right: 0;
+  left: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-ul li {
-  list-style: none;
+.navigation a {
+  text-decoration: none;
   margin: 5px;
   border: 1px solid #525252;
   padding: 2px 5px 2px 5px;
@@ -37,16 +41,9 @@ ul li {
   color: #901C1C;
   cursor: pointer;
 }
-ul li:hover {
-  color: white;
+.navigation a:hover {
   background-color: #901C1C;
-}
-
-nav {
-  position: absolute;
-  margin-top: 125px;
-  right: 0;
-  left: 0;
+  color: white;
 }
 
 .photographer-card {
@@ -93,8 +90,9 @@ nav {
 
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
-  header img {
+  .main-header img {
     width: 150px;
+    object-fit: cover;
   }
 
   h1 {
@@ -102,20 +100,28 @@ nav {
   }
 }
 @media screen and (max-width: 576px) {
-  header {
+  .main-header {
     flex-direction: column;
     margin-bottom: 150px;
   }
 
-  nav {
+  .navigation {
     margin-top: 100px;
   }
 }
 @media screen and (min-width: 1400px) {
-  nav {
+  .navigation {
     margin-top: 0px;
   }
 }
+.header-page {
+  padding: 20px;
+}
+.header-page img {
+  width: 220px;
+  object-fit: cover;
+}
+
 .portfolio {
   display: flex;
   flex-wrap: wrap;
@@ -179,7 +185,17 @@ nav {
   border-radius: 5px;
 }
 
+.contact-btn:hover {
+  background-color: #D3573C;
+  color: black;
+}
+
 @media screen and (max-width: 576px) {
+  .header-page img {
+    width: 150px;
+    object-fit: cover;
+  }
+
   .contact-btn {
     display: none;
   }

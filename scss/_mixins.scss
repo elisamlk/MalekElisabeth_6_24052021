@@ -1,0 +1,38 @@
+@mixin tag-style {
+  text-decoration: none;
+  margin: 5px;
+  border: 1px solid $third-color;
+  padding: 2px 5px 2px 5px;
+  border-radius: 15px;
+  color: $primary-color;
+  cursor: pointer;
+}
+
+@mixin tag-style-hover {
+  background-color: $primary-color;
+  color: white;
+}
+
+@mixin button-style {
+  background-color: $primary-color;
+  color: white;
+  font-size: 20px;
+  border: none;
+  padding: 20px 10px 20px 10px;
+  border-radius: 5px;
+}
+
+@mixin button-style-hover {
+  background-color: $secondary-color;
+  color: black;
+}
+
+@mixin logo {
+  width: 220px;
+  object-fit: cover;
+}
+
+@mixin logo-mobile {
+  width: 150px;
+  object-fit: cover;
+}

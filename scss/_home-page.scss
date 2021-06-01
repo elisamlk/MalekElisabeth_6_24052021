@@ -7,7 +7,7 @@
   font-family: Roboto, sans-serif;
 }
 
-header {
+.main-header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -18,35 +18,24 @@ header {
     font-weight: 400;
   }
   img {
-    width: 220px;
-    object-fit: cover;
+    @include logo;
   }
 }
 
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  li {
-    list-style: none;
-    margin: 5px;
-    border: 1px solid $tag-border;
-    padding: 2px 5px 2px 5px;
-    border-radius: 15px;
-    color: $primary-color;
-    cursor: pointer;
-  }
-  li:hover {
-    color: white;
-    background-color: $primary-color;
-  }
-}
-
-nav {
+.navigation {
   position: absolute;
   margin-top: 125px;
   right: 0;
   left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  a {
+    @include tag-style;
+  }
+  a:hover {
+    @include tag-style-hover;
+  }
 }
 
 .photographer-card {
@@ -63,11 +52,11 @@ nav {
   }
   h2 {
     color: $secondary-color;
-    margin:10px 0 10px 0;
+    margin: 10px 0 10px 0;
     text-align: center;
     font-weight: 400;
   }
-  a{
+  a {
     text-decoration: none;
   }
 }
@@ -83,19 +72,19 @@ nav {
   display: flex;
 }
 
-.tagline{
-  margin:5px 0 5px 0;
+.tagline {
+  margin: 5px 0 5px 0;
 }
 
-.price{
-  color:$tag-border;
+.price {
+  color: $third-color;
 }
 
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {
-  header img {
-    width: 150px;
+  .main-header img {
+    @include logo-mobile;
   }
   h1 {
     font-size: 25px;
@@ -103,17 +92,17 @@ nav {
 }
 
 @media screen and (max-width: 576px) {
-  header {
+  .main-header {
     flex-direction: column;
     margin-bottom: 150px;
   }
-  nav {
+  .navigation {
     margin-top: 100px;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  nav {
+  .navigation {
     margin-top: 0px;
   }
 }

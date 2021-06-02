@@ -61,6 +61,16 @@
   }
 }
 
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  li{
+    @include tag-style;
+    list-style: none;
+  }
+}
+
 .photographer-display {
   display: flex;
   flex-wrap: wrap;

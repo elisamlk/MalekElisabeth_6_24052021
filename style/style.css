@@ -69,6 +69,22 @@
   text-decoration: none;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tags li {
+  text-decoration: none;
+  margin: 5px;
+  border: 1px solid #525252;
+  padding: 2px 5px 2px 5px;
+  border-radius: 15px;
+  color: #901C1C;
+  cursor: pointer;
+  list-style: none;
+}
+
 .photographer-display {
   display: flex;
   flex-wrap: wrap;
@@ -201,8 +217,17 @@
   }
 
   .photographer-info .id-photo {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .photographer-info {
+    background-color: white;
+    margin-bottom: 0;
+  }
+
+  .photographer-page {
+    padding: 5px;
   }
 }
 /*

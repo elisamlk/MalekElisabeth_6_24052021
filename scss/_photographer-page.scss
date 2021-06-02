@@ -75,7 +75,14 @@
     display: none;
   }
   .photographer-info .id-photo {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
+  }
+  .photographer-info{
+    background-color: white;
+    margin-bottom: 0;
+  }
+  .photographer-page{
+    padding: 5px;
   }
 }

@@ -1,4 +1,7 @@
 const photographerDisplay = document.querySelector(".photographer-display");
+let navLink = document.querySelectorAll(".nav-link");
+console.log(navLink);
+console.log(photographerDisplay);
 
 fetch("data/FishEyeData.json")
   .then((response) => response.json())
@@ -16,16 +19,24 @@ fetch("data/FishEyeData.json")
           <p class="country">${photographers[i].country}</p> 
         </div>
         <p class="tagline">${photographers[i].tagline}</p>
-        <p class="price">${photographers[i].price} €/jour</p>
-        <nav>
-         <a>${photographers[i].tags[0]}</a>
-        </nav>
-    </section>`;
+        <p class="price">${photographers[i].price}€/jour</p>
+        <ul class="tags">${photographers[i].tags.map(tag =>
+        `<li class="tags-list"${tag}">#${tag}</li>`).join(" ")}
+          </ul> 
+        </section>`
     }
+    let cardTags = document.querySelectorAll("li");
+    console.log(cardTags);
+    
   });
-console.log(photographerDisplay);
 
-/*for(let t=0; t< photographers[i].tags.length; t++){
-  `<a>${photographers[i].tags[t]}</a>`
-}}
-*/
+
+
+
+
+
+
+
+
+
+

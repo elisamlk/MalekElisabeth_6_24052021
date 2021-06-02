@@ -21,9 +21,9 @@ fetch("../data/FishEyeData.json")
           <p class="country">${photographers[i].country}</p>
         </div>
         <p class="tagline">${photographers[i].tagline}</p>
-        <ul>
-        <li>${photographers[i].tags[0]}</li>
-      </ul>
+        <nav>
+        <a>${photographers[i].tags[0]}</a>
+      </nav>
       </div>
       <button class="contact-btn">Contactez-moi</button>
       <img class="id-photo" src="${

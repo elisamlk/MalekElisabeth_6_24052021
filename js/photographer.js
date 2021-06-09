@@ -10,29 +10,49 @@ fetch("../data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
     let photographers = data.photographers;
+    let media = data.media;
     console.log(photographers);
+    console.log(media);
     for (let i = 0; i < photographers.length; i++) {
       let photographerId = photographers[i].id;
       if (photographerId == id) {
-        photographerInfo.innerHTML += `<div class="info">
-        <h2>${photographers[i].name}</h2>
+        photographerProfil(photographers[i]);
+      }
+    }
+  });
+
+function photographerProfil(photographer) {
+  photographerInfo.innerHTML += `<div class="info">
+        <h2>${photographer.name}</h2>
         <div class="location">
-          <p class="city">${photographers[i].city},</p>
-          <p class="country">${photographers[i].country}</p>
+          <p class="city">${photographer.city},</p>
+          <p class="country">${photographer.country}</p>
         </div>
-        <p class="tagline">${photographers[i].tagline}</p>
+        <p class="tagline">${photographer.tagline}</p>
         <nav>
-        <a>${photographers[i].tags[0]}</a>
+        <a>${photographer.tags}</a>
       </nav>
       </div>
       <button class="contact-btn">Contactez-moi</button>
       <img class="id-photo" src="${
-        "../img/photographers/" + photographers[i].portrait
+        "../img/photographers/" + photographer.portrait
       }" alt="">
       `;
-      }
-    }
-  });
+}
+
+function factoryImage(images, type) {
+  if (images.hasOwnProperty("image")) {
+    type.innerHTML +=
+      '<img class="image-media" src="${"../img/" + id + "/" + medias[i].image" alt="${medias[i].title}">';
+  }
+}
+
+function factoryVideo(videos, type){
+  if(videos.hasOwnProperty("video")){
+   type.innerHTML += `<video class="image-media" controls src=" "../img/" + id + "/" + media[i].video
+  }" alt="${media[i].title}"></video>`
+  }
+}
 
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())

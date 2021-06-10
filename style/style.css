@@ -71,13 +71,12 @@ body {
 .photographer-card a {
   text-decoration: none;
 }
-
-.tags {
+.photographer-card .tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.tags li {
+.photographer-card .tags li {
   text-decoration: none;
   margin: 5px;
   border: 1px solid #525252;
@@ -193,6 +192,20 @@ body {
   height: 200px;
   border-radius: 100%;
   object-fit: cover;
+}
+.photographer-info .tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photographer-info .tags-list {
+  text-decoration: none;
+  margin: 5px;
+  border: 1px solid #525252;
+  padding: 2px 5px 2px 5px;
+  border-radius: 15px;
+  color: #901C1C;
+  cursor: pointer;
+  list-style: none;
 }
 
 .contact-btn {

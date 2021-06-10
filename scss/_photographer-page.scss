@@ -57,6 +57,14 @@
     border-radius: 100%;
     object-fit: cover;
   }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tags-list {
+    @include tag-style;
+    list-style: none;
+  }
 }
 
 .contact-btn {

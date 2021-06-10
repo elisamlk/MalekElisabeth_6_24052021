@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-body{
+body {
   font-family: Roboto, sans-serif;
 }
 
@@ -62,15 +62,14 @@ body{
   a {
     text-decoration: none;
   }
-}
-
-.tags{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  li{
-    @include tag-style;
-    list-style: none;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      @include tag-style;
+      list-style: none;
+    }
   }
 }
 

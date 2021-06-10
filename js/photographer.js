@@ -36,10 +36,10 @@ function addPhotographerProfil(photographer) {
           <p class="country">${photographer.country}</p>
         </div>
         <p class="tagline">${photographer.tagline}</p>
-        <nav ${photographer.tags
-          .map((tag) => `<a class="tags-list"${tag}">#${tag}</a>`)
+        <ul class="tags">${photographer.tags
+          .map((tag) => `<li class="tags-list"${tag}">#${tag}</li>`)
           .join(" ")}
-        </nav>
+          </ul> 
         </div>
        <button class="contact-btn">Contactez-moi</button>
         <img class="id-photo" src="${

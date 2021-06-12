@@ -21,9 +21,7 @@ function addPhotographerCard(photographer) {
       </div>
       <p class="tagline">${photographer.tagline}</p>
       <p class="price">${photographer.price}€/jour</p>
-      <ul class="tags">${photographer.tags
-        .map((tag) => `<li class="tags-list"${tag}">#${tag}</li>`)
-        .join(" ")}
+      <ul class="tags">${photographer.tags.map((tag) =>`<li class="tags-list"${tag}">#${tag}</li>`).join(" ")}
         </ul> 
       </section>`;
 }

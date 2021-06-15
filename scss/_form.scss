@@ -1,5 +1,5 @@
-/*
-.modal {
+/*Cacher le formulaire en respectant les bonnes pratiques d'accessibilité*/
+/*aside {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -11,50 +11,42 @@
 }
 */
 
-.content {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 450px;
-  background: $secondary-color;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  padding-top: 10px;
+aside {
+  position: fixed;
+  display: none;
+  align-self: center;
+  padding: 10px;
+  min-width: 300px;
+  max-width:400px;
+  flex-basis: 100%;
+  background-color: $secondary-color;
+  border-radius: 5px;
+  i {
+    color: #fff;
+    cursor: pointer;
+  }
+  .top-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .btn-submit {
+    @include button-style;
+    text-align: center;
+  }
 }
-
-.modal-body {
-  padding: 15px 8%;
-  margin: 15px auto;
-}
-
-label {
-  font-family: var(--font-default);
-  font-size: 17px;
-  font-weight: normal;
-  display: inline-block;
-  margin-bottom: 11px;
-}
-input {
-  padding: 8px;
-  border: 0.8px solid #ccc;
-  outline: none;
-}
-.text-control {
-  margin: 0;
-  padding: 8px;
-  width: 100%;
-  border-radius: 8px;
-  font-size: 20px;
-  height: 48px;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  transform: scale(0.7);
+.formData {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+  input {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .message-control {
+    height: 80px;
+  }
 }

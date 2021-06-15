@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 ::before,
 ::after {
@@ -171,6 +172,8 @@ body {
 }
 
 .photographer-page {
+  display: flex;
+  flex-direction: column;
   padding: 0 20px 0 20px;
 }
 
@@ -211,9 +214,9 @@ body {
 .contact-btn {
   background-color: #901C1C;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   border: none;
-  padding: 20px 10px 20px 10px;
+  padding: 15px 10px 15px 10px;
   border-radius: 5px;
 }
 
@@ -226,10 +229,6 @@ body {
   .header-page img {
     width: 150px;
     object-fit: cover;
-  }
-
-  .contact-btn {
-    display: none;
   }
 
   .photographer-info .id-photo {
@@ -246,8 +245,13 @@ body {
     padding: 5px;
   }
 }
-/*
-.modal {
+@media screen and (max-width: 768px) {
+  .contact-btn {
+    display: none;
+  }
+}
+/*Cacher le formulaire en respectant les bonnes pratiques d'accessibilité*/
+/*aside {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -258,54 +262,50 @@ body {
   width: 1px;
 }
 */
-.content {
-  margin: 5% auto;
-  width: 100%;
-  max-width: 450px;
-  background: #D3573C;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
+aside {
+  position: fixed;
+  display: none;
+  align-self: center;
+  padding: 10px;
+  min-width: 300px;
+  max-width: 400px;
+  flex-basis: 100%;
+  background-color: #D3573C;
+  border-radius: 5px;
+}
+aside i {
   color: #fff;
-  padding-top: 10px;
-}
-
-.modal-body {
-  padding: 15px 8%;
-  margin: 15px auto;
-}
-
-label {
-  font-family: var(--font-default);
-  font-size: 17px;
-  font-weight: normal;
-  display: inline-block;
-  margin-bottom: 11px;
-}
-
-input {
-  padding: 8px;
-  border: 0.8px solid #ccc;
-  outline: none;
-}
-
-.text-control {
-  margin: 0;
-  padding: 8px;
-  width: 100%;
-  border-radius: 8px;
-  font-size: 20px;
-  height: 48px;
-}
-
-.close {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
   cursor: pointer;
-  transform: scale(0.7);
+}
+aside .top-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+aside .btn-submit {
+  background-color: #901C1C;
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 15px 10px 15px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.formData {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 10px 0;
+}
+.formData input {
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+.formData .message-control {
+  height: 80px;
 }
 
 /*# sourceMappingURL=style.css.map */

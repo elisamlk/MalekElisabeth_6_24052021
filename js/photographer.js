@@ -7,6 +7,7 @@ console.log(id);
 
 console.log(photographerInfo);
 console.log(portfolio);
+let modalForm = document.querySelector("aside");
 
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())
@@ -28,6 +29,16 @@ fetch("../data/FishEyeData.json")
         addPhotographerPortfolio(medias[i]);
       }
     }
+    let contactBtn = document.querySelector(".contact-btn");
+    console.log(contactBtn);
+    contactBtn.addEventListener("click", function () {
+      modalForm.style.display = "block";
+    });
+    let closeBtn = document.querySelector(".fas");
+    console.log(closeBtn);
+    closeBtn.addEventListener("click", function () {
+      modalForm.style.display = "none";
+    });
   });
 
 function factoryMedia(media, type) {

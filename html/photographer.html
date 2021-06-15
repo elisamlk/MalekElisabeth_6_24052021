@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script
+      src="https://kit.fontawesome.com/8dacf958f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FishEye</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <script src="https://kit.fontawesome.com/8dacf958f8.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-  <title>FishEye</title>
-</head>
+  <body>
+    <header class="header-page">
+      <a href="../index.html">
+        <img src="../img/logo/logo.png" alt="FishEye Home Page" />
+      </a>
+    </header>
+    <main class="photographer-page">
+      <section class="photographer-info"></section>
 
-<body>
-  <header class="header-page">
-    <a href="../index.html">
-      <img src="../img/logo/logo.png" alt="FishEye Home Page" />
-    </a>
-  </header>
-  <main class="photographer-page">
-    <section class="photographer-info"></section>
+      <section class="portfolio"></section>
 
-    <section class="portfolio"></section>
-
-    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalContact">
-      <div class="content">
-        <span class="close-modal"></span>
-        <div class="modal-body">
-          <h1>Contactez-moi</h1>
-          <form class="form" name="reserve" action="index.html" method="get">
+      <aside class="modal" aria-hidden="true" role="dialog" aria-modal="false">
+        <div class="background-form">
+          <div class="top-form">
+            <h1>Contactez-moi</h1>
+            <i class="fas fa-times"></i>
+          </div>
+          <form>
             <div class="formData">
-              <label>Prénom</label>
-              <input class="text-control" type="text" id="first" name="first" />
+              <label for="first">Prénom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+                placeholder="Prénom"
+              />
               <span class="first-error error"></span>
             </div>
             <div class="formData">
-              <label>Nom</label>
-              <input class="text-control" type="text" id="last" name="last" />
+              <label for="last">Nom</label>
+              <input
+                class="text-control"
+                type="text"
+                id="last"
+                name="last"
+                placeholder="Nom"
+              />
               <span class="last-error error"></span>
             </div>
             <div class="formData">
-              <label>E-mail</label>
-              <input class="text-control" id="email" name="email" />
+              <label for="email">E-mail</label>
+              <input
+                class="text-control"
+                id="email"
+                name="email"
+                placeholder="exemple@email.com"
+              />
               <span class="email-error error"></span>
             </div>
             <div class="formData">
-              <label>Votre message</label>
-              <textarea name="precisions" id="precisions" cols="40" rows="4"></textarea>
+              <label for="message">Votre message</label>
+              <input class="message-control" id="message" name="message" />
               <span class="message-error error"></span>
             </div>
-            <input class="btn-submit" type="submit" value="Envoyer" />
+            <input class="btn-submit" type="submit" value="Envoyez" />
           </form>
         </div>
-      </div>
-    </div>
-  </main>
-  <script src="../js/photographer.js"></script>
-</body>
-
+      </aside>
+    </main>
+    <script src="../js/photographer.js"></script>
+    <script src="../js/form.js"></script>
+  </body>
 </html>

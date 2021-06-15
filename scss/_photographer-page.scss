@@ -36,6 +36,8 @@
 }
 
 .photographer-page {
+  display: flex;
+  flex-direction: column;
   padding: 0 20px 0 20px;
 }
 
@@ -79,9 +81,6 @@
   .header-page img {
     @include logo-mobile;
   }
-  .contact-btn {
-    display: none;
-  }
   .photographer-info .id-photo {
     width: 130px;
     height: 130px;
@@ -93,4 +92,10 @@
   .photographer-page {
     padding: 5px;
   }
+}
+
+@media screen and (max-width :768px){
+  .contact-btn {
+    display: none;
+}
 }

@@ -20,6 +20,7 @@ fetch("../data/FishEyeData.json")
       let photographerId = photographers[i].id;
       if (photographerId == id) {
         addPhotographerProfil(photographers[i]);
+        addNameInForm(photographers[i]);
       }
     }
     for (let i in medias) {
@@ -41,18 +42,10 @@ fetch("../data/FishEyeData.json")
     });
   });
 
-function factoryMedia(media, type) {
-  if (media.hasOwnProperty("image")) {
-    return `<img class="image-media" src="${
-      "../img/" + id + "/" + media.image
-    }" alt="${media.title}">`;
-  } else if (media.hasOwnProperty("video")) {
-    return `<video class="image-media" controls src="${
-      "../img/" + id + "/" + media.video
-    }" alt="${media.title}"></video>`;
-  } else {
-    return "";
-  }
+function addNameInForm(photographer) {
+  let photographerName = document.getElementsByTagName("h3");
+  photographerName.textContent = photographer.name;
+  console.log(photographerName);
 }
 
 function addPhotographerPortfolio(media) {

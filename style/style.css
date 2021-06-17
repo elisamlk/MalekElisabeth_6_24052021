@@ -263,12 +263,15 @@ body {
 }
 */
 aside {
+  background-color: blue;
+  animation-name: modalopen;
+  animation-duration: 1s;
   position: fixed;
   display: none;
   align-self: center;
   padding: 10px;
   min-width: 300px;
-  max-width: 400px;
+  width: 400px;
   flex-basis: 100%;
   background-color: #D3573C;
   border-radius: 5px;
@@ -306,6 +309,25 @@ aside .btn-submit {
 }
 .formData .message-control {
   height: 80px;
+}
+
+.error {
+  color: "#fe142f";
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 546px) {
+  aside {
+    width: 300px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

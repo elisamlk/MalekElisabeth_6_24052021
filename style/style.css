@@ -312,7 +312,7 @@ aside .btn-submit {
 }
 
 .error {
-  color: "#fe142f";
+  color: white;
 }
 
 @keyframes modalopen {

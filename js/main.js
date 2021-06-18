@@ -1,3 +1,6 @@
+let navLinks = document.querySelectorAll(".nav-link");
+console.log(navLinks);
+
 fetch("data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
@@ -6,7 +9,17 @@ fetch("data/FishEyeData.json")
     for (let i = 0; i < photographers.length; i++) {
       addPhotographerCard(photographers[i]);
     }
+
+    let tags = document.querySelectorAll(".tags-list");
+    let photographerCard = document.querySelectorAll(".photographer-card");
+    for (const n in navLinks) {
+      navLinks[n].addEventListener("click", (e) => {
+        
+      }
+      )
+    }
   });
+
 
 function addPhotographerCard(photographer) {
   let photographerDisplay = document.querySelector(".photographer-display");
@@ -21,7 +34,9 @@ function addPhotographerCard(photographer) {
       </div>
       <p class="tagline">${photographer.tagline}</p>
       <p class="price">${photographer.price}€/jour</p>
-      <ul class="tags">${photographer.tags.map((tag) =>`<li class="tags-list"${tag}">#${tag}</li>`).join(" ")}
+      <ul class="tags">${photographer.tags.map((tag) => `<li class="tags-list"${tag}">#${tag}</li>`).join(" ")}
         </ul> 
       </section>`;
 }
+
+

@@ -1,5 +1,4 @@
 let navLinks = document.querySelectorAll(".nav-link");
-console.log(navLinks);
 
 fetch("data/FishEyeData.json")
   .then((response) => response.json())
@@ -9,21 +8,35 @@ fetch("data/FishEyeData.json")
     for (let i = 0; i < photographers.length; i++) {
       addPhotographerCard(photographers[i]);
     }
-
-    let tags = document.querySelectorAll(".tags-list");
-    let photographerCard = document.querySelectorAll(".photographer-card");
-    for (const n in navLinks) {
-      navLinks[n].addEventListener("click", (e) => {
-        
-      }
-      )
+    for (let n in navLinks) {
+      navLinks[n].addEventListener("click", function () {
+        let selectedTag = navLinks[n].getAttribute("data-filter");
+        console.log(selectedTag);
+        let cardsToDisplay = document.querySelectorAll(
+          `.photographer-card.${selectedTag}`
+        );
+        console.log(cardsToDisplay);
+        let cardsToHide = document.querySelectorAll(
+          `.photographer-card:not(.${selectedTag})`
+        );
+        console.log(cardsToHide);
+        cardsToDisplay.forEach((cardToDisplay) => {
+          cardToDisplay.classList.add("display");
+          cardToDisplay.classList.remove("hide");
+        });
+        cardsToHide.forEach((cardToHide) => {
+          cardToHide.classList.add("hide");
+          cardToHide.classList.remove("display");
+        });
+      });
     }
   });
 
-
 function addPhotographerCard(photographer) {
   let photographerDisplay = document.querySelector(".photographer-display");
-  photographerDisplay.innerHTML += `<section class="photographer-card">
+  photographerDisplay.innerHTML += `<section class="photographer-card ${photographer.tags
+    .map((tag) => `${tag}`)
+    .join(" ")}">
       <a class="link" href="html/photographer.html?id=${photographer.id}">
         <img src="img/photographers/${photographer.portrait}" alt="">
         <h2>${photographer.name}</h2>
@@ -34,9 +47,9 @@ function addPhotographerCard(photographer) {
       </div>
       <p class="tagline">${photographer.tagline}</p>
       <p class="price">${photographer.price}€/jour</p>
-      <ul class="tags">${photographer.tags.map((tag) => `<li class="tags-list"${tag}">#${tag}</li>`).join(" ")}
+      <ul class="tags">${photographer.tags
+      .map((tag) => `<li class="tags-list" data-filter="${tag}">#${tag}</li>`)
+      .join(" ")}
         </ul> 
       </section>`;
 }
-
-

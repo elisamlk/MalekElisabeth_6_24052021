@@ -92,6 +92,14 @@ body {
   color: $third-color;
 }
 
+.hide{
+  display: none;
+}
+
+.display{
+  display: block;
+}
+
 /*MEDIA QUERIES*/
 
 @media screen and (max-width: 768px) {

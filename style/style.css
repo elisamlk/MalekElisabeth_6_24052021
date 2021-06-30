@@ -107,6 +107,14 @@ body {
   color: #525252;
 }
 
+.hide {
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
   .main-header img {

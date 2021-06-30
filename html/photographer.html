@@ -1,62 +1,92 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script
+      src="https://kit.fontawesome.com/8dacf958f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FishEye</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <script src="https://kit.fontawesome.com/8dacf958f8.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
-  <title>FishEye</title>
-</head>
+  <body>
+    <header class="header-page">
+      <a href="../index.html">
+        <img src="../img/logo/logo.png" alt="FishEye Home Page" />
+      </a>
+    </header>
+    <main class="photographer-page">
+      <section class="photographer-info"></section>
 
-<body>
-  <header class="header-page">
-    <a href="../index.html">
-      <img src="../img/logo/logo.png" alt="FishEye Home Page" />
-    </a>
-  </header>
-  <main class="photographer-page">
-    <section class="photographer-info"></section>
+      <select name="medias" id="media-select">
+        <option value="Popularité">Popularité</option>
+        <option value="Date">Date</option>
+        <option value="Titre">Titre</option>
+      </select>
 
-    <section class="portfolio"></section>
+      <section class="portfolio">
 
-    <aside class="modal" aria-hidden="true" role="dialog" aria-modal="false">
-      <div class="top-form">
-        <h1>Contactez-moi</h1>
-        <i class="fas fa-times"></i>
-      </div>
-      <h3></h3>
-      <form>
-        <div class="formData">
-          <label for="first">Prénom</label>
-          <input class="text-control" type="text" id="first" name="first" placeholder="Prénom" />
-          <span class="first-error error"></span>
+        
+      </section>
+
+      <aside class="modal" aria-hidden="true" role="dialog" aria-modal="false">
+        <div class="top-form">
+          <h1>Contactez-moi</h1>
+          <i class="fas fa-times"></i>
         </div>
-        <div class="formData">
-          <label for="last">Nom</label>
-          <input class="text-control" type="text" id="last" name="last" placeholder="Nom" />
-          <span class="last-error error"></span>
-        </div>
-        <div class="formData">
-          <label for="email">E-mail</label>
-          <input class="text-control" id="email" name="email" placeholder="exemple@email.com" />
-          <span class="email-error error"></span>
-        </div>
-        <div class="formData">
-          <label for="message">Votre message</label>
-          <input class="message-control" id="message" name="message" />
-          <span class="message-error error"></span>
-        </div>
-        <input class="btn-submit" type="submit" value="Envoyez" />
-      </form>
-    </aside>
-  </main>
-  <script src="../js/photographer.js"></script>
-  <script src="../js/form.js"></script>
-  <script src="../js/factory.js"></script>
-</body>
-
+        <h3 id="test"></h3>
+        <form>
+          <div class="formData">
+            <label for="first">Prénom</label>
+            <input
+              class="text-control"
+              type="text"
+              id="first"
+              name="first"
+              placeholder="Prénom"
+            />
+            <span class="first-error error"></span>
+          </div>
+          <div class="formData">
+            <label for="last">Nom</label>
+            <input
+              class="text-control"
+              type="text"
+              id="last"
+              name="last"
+              placeholder="Nom"
+            />
+            <span class="last-error error"></span>
+          </div>
+          <div class="formData">
+            <label for="email">E-mail</label>
+            <input
+              class="text-control"
+              id="email"
+              name="email"
+              placeholder="exemple@email.com"
+            />
+            <span class="email-error error"></span>
+          </div>
+          <div class="formData">
+            <label for="message">Votre message</label>
+            <input class="message-control" id="message" name="message" />
+            <span class="message-error error"></span>
+          </div>
+          <input class="btn-submit" type="submit" value="Envoyez" />
+        </form>
+      </aside>
+    </main>
+    <script src="../js/photographer.js"></script>
+    <script src="../js/form.js"></script>
+    <script src="../js/factory.js"></script>
+  </body>
 </html>

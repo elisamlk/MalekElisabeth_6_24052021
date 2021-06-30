@@ -43,7 +43,7 @@ fetch("../data/FishEyeData.json")
   });
 
 function addNameInForm(photographer) {
-  let photographerName = document.getElementsByTagName("h3");
+  let photographerName = document.getElementById("test");
   photographerName.textContent = photographer.name;
   console.log(photographerName);
 }

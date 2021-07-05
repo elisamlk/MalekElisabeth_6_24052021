@@ -111,10 +111,6 @@ body {
   display: none;
 }
 
-.display {
-  display: block;
-}
-
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
   .main-header img {
@@ -189,7 +185,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   background-color: #FAFAFA;
   height: 240px;
   border-radius: 5px;
@@ -231,6 +227,33 @@ body {
 .contact-btn:hover {
   background-color: #D3573C;
   color: black;
+}
+
+.photographer-work {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.photographer-work p {
+  margin-right: 20px;
+}
+.photographer-work select {
+  color: white;
+  background-color: #901C1C;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bottom-section {
+  background-color: #D3573C;
+  position: fixed;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 576px) {

@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   background-color: $background-color;
   height: 240px;
   border-radius: 5px;
@@ -77,6 +77,33 @@
   @include button-style-hover;
 }
 
+.photographer-work {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  p {
+    margin-right: 20px;
+  }
+  select {
+    color: white;
+    background-color: $primary-color;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.bottom-section {
+  background-color: $secondary-color;
+  position: fixed;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 576px) {
   .header-page img {
     @include logo-mobile;
@@ -94,8 +121,8 @@
   }
 }
 
-@media screen and (max-width :768px){
+@media screen and (max-width: 768px) {
   .contact-btn {
     display: none;
-}
+  }
 }

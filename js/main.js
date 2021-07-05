@@ -21,12 +21,12 @@ fetch("data/FishEyeData.json")
         );
         console.log(cardsToHide);
         cardsToDisplay.forEach((cardToDisplay) => {
-          cardToDisplay.classList.add("display");
+          cardToDisplay.classList.add("show");
           cardToDisplay.classList.remove("hide");
         });
         cardsToHide.forEach((cardToHide) => {
           cardToHide.classList.add("hide");
-          cardToHide.classList.remove("display");
+          cardToHide.classList.remove("show");
         });
       });
     }

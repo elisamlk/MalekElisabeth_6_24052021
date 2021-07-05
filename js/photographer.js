@@ -1,13 +1,16 @@
 const photographerInfo = document.querySelector(".photographer-info");
 const portfolio = document.querySelector(".portfolio");
 let params = new URLSearchParams(document.location.search);
-console.log(params);
+//console.log(params);
 let id = params.get("id");
-console.log(id);
+//console.log(id);
 
-console.log(photographerInfo);
-console.log(portfolio);
+//console.log(photographerInfo);
+//console.log(portfolio);
 let modalForm = document.querySelector("aside");
+let filter = document.querySelectorAll("option");
+console.log(filter);
+
 
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())
@@ -21,13 +24,18 @@ fetch("../data/FishEyeData.json")
       if (photographerId == id) {
         addPhotographerProfil(photographers[i]);
         addNameInForm(photographers[i]);
+        addPhotographerPrice(photographers[i]);
+        addPhotographerTotalLikes(photographers[i]);
       }
     }
+
     for (let i in medias) {
       let mediaId = medias[i].photographerId;
-      console.log(mediaId);
+      //console.log(mediaId);
       if (mediaId == id) {
         addPhotographerPortfolio(medias[i]);
+
+        //sortByDate(medias[i]);
       }
     }
     let contactBtn = document.querySelector(".contact-btn");
@@ -41,6 +49,18 @@ fetch("../data/FishEyeData.json")
       modalForm.style.display = "none";
     });
   });
+
+/*function sortByDate(media) {
+  let date =[ media.date];
+  console.log(date)
+  date.sort(function(a, b) {
+    return a - b;
+   
+
+  });
+  console.log(date); 
+}
+*/
 
 function addNameInForm(photographer) {
   let photographerName = document.getElementById("test");
@@ -77,4 +97,16 @@ function addPhotographerProfil(photographer) {
       <img class="id-photo" src="../img/photographers/${
         photographer.portrait
       }" alt="">`;
+}
+
+function addPhotographerPrice(photographer) {
+  let prices = document.getElementById("price-bottom");
+  prices.textContent = photographer.price + "€/jour";
+  console.log(prices);
+}
+
+function addPhotographerTotalLikes(photographer) {
+  let totalLikes = document.getElementById("total-likes");
+  let like = document.getElementsByClassName(".likes");
+  console.log(like);
 }

@@ -26,15 +26,17 @@
     <main class="photographer-page">
       <section class="photographer-info"></section>
 
-      <select name="medias" id="media-select">
-        <option value="Popularité">Popularité</option>
-        <option value="Date">Date</option>
-        <option value="Titre">Titre</option>
-      </select>
+      <section>
+        <div class="photographer-work">
+          <p>Triez par</p>
+          <select name="medias" id="media-select">
+            <option value="Popularité">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+          </select>
+        </div>
 
-      <section class="portfolio">
-
-        
+        <div class="portfolio"></div>
       </section>
 
       <aside class="modal" aria-hidden="true" role="dialog" aria-modal="false">
@@ -84,6 +86,14 @@
           <input class="btn-submit" type="submit" value="Envoyez" />
         </form>
       </aside>
+
+      <div class="bottom-section">
+        <div class="bottom-total-likes">
+          <p id="total-likes"></p>
+          <i class="fas fa-heart"></i>
+        </div>
+        <p id="price-bottom"></p>
+      </div>
     </main>
     <script src="../js/photographer.js"></script>
     <script src="../js/form.js"></script>

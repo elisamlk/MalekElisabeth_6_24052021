@@ -256,6 +256,14 @@ body {
   justify-content: space-between;
 }
 
+.bottom-total-likes {
+  display: flex;
+  align-items: center;
+}
+.bottom-total-likes #total-likes {
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 576px) {
   .header-page img {
     width: 150px;

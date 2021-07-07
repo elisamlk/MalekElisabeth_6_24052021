@@ -11,7 +11,6 @@ let modalForm = document.querySelector("aside");
 let filter = document.querySelectorAll("option");
 console.log(filter);
 
-
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())
   .then((data) => {
@@ -25,7 +24,6 @@ fetch("../data/FishEyeData.json")
         addPhotographerProfil(photographers[i]);
         addNameInForm(photographers[i]);
         addPhotographerPrice(photographers[i]);
-        addPhotographerTotalLikes(photographers[i]);
       }
     }
 
@@ -34,10 +32,13 @@ fetch("../data/FishEyeData.json")
       //console.log(mediaId);
       if (mediaId == id) {
         addPhotographerPortfolio(medias[i]);
-
         //sortByDate(medias[i]);
       }
     }
+
+    addPhotographerTotalLikes();
+    addLike();
+
     let contactBtn = document.querySelector(".contact-btn");
     console.log(contactBtn);
     contactBtn.addEventListener("click", function () {
@@ -74,7 +75,7 @@ function addPhotographerPortfolio(media) {
   <div class="info-card">
     <p class ="image-name">${media.title}</p>
     <div class="info-container">
-      <p class="likes">${media.likes}</p> 
+      <p class="image-likes">${media.likes}</p> 
       <i class="far fa-heart"></i>
     </div>
   </div>
@@ -105,8 +106,31 @@ function addPhotographerPrice(photographer) {
   console.log(prices);
 }
 
-function addPhotographerTotalLikes(photographer) {
+function addPhotographerTotalLikes() {
   let totalLikes = document.getElementById("total-likes");
-  let like = document.getElementsByClassName(".likes");
-  console.log(like);
+  let arrayOfLikes = [];
+  let imageLikes = document.querySelectorAll(".image-likes");
+  console.log(imageLikes.length);
+  for (let i in imageLikes) {
+    let imageNumber = parseInt(imageLikes[i].innerText);
+    if (isNaN(imageNumber)) {
+      return 0;
+    } else {
+      arrayOfLikes.push(imageNumber);
+      console.log(arrayOfLikes);
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      let sumTotalLikes = arrayOfLikes.reduce(reducer);
+      console.log(sumTotalLikes);
+      totalLikes.innerHTML = sumTotalLikes;
+    }
+    /*arrayOfLikes.push(imageNumber);
+    console.log(arrayOfLikes);
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    let sumTotalLikes = arrayOfLikes.reduce(reducer);
+    console.log(sumTotalLikes);
+    totalLikes.innerHTML = sumTotalLikes;
+    */
+  }
 }
+
+function addLike() {}

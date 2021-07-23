@@ -5,6 +5,7 @@ function manageLikes() {
 
   likeButtons.forEach((likeButton, i) => {
     likeButton.addEventListener("click", function () {
+      //console.log(likeButton);
       let isLiked = likeButtons[i].classList.toggle("is-liked");
       let initialValue = document.querySelectorAll(".image-likes");
       if (isLiked == true) {
@@ -19,7 +20,7 @@ function manageLikes() {
       document.querySelectorAll(".image-likes")[i].innerText
     );
     arrayOfLikes.push(totalLikes);
-    console.log(arrayOfLikes);
+    //console.log(arrayOfLikes);
   });
 
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -30,9 +31,9 @@ function manageLikes() {
   likeButtons.forEach((likeButton, i) => {
     likeButton.addEventListener("click", function () {
       let likedImage = document.getElementsByClassName("is-liked");
-      console.log(likedImage);
+      //console.log(likedImage);
       let addNewLike = likedImage.length;
-      console.log(addNewLike);
+      //console.log(addNewLike);
       let newTotalLikes = sumTotalLikes + addNewLike;
       totalLikesDisplay.innerText = newTotalLikes;
     });

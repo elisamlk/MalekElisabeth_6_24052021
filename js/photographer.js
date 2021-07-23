@@ -8,8 +8,6 @@ let id = params.get("id");
 //console.log(photographerInfo);
 //console.log(portfolio);
 let modalForm = document.querySelector("aside");
-let filter = document.querySelectorAll("option");
-console.log(filter);
 
 fetch("../data/FishEyeData.json")
   .then((response) => response.json())
@@ -31,7 +29,7 @@ fetch("../data/FishEyeData.json")
       //console.log(mediaId);
       if (mediaId == id) {
         addPhotographerPortfolio(medias[i]);
-        //sortByDate(medias[i]);
+        
       }
     }
     let contactBtn = document.querySelector(".contact-btn");
@@ -44,10 +42,9 @@ fetch("../data/FishEyeData.json")
     closeBtn.addEventListener("click", function () {
       modalForm.style.display = "none";
     });
-   
 
     manageLikes();
-    
+    sortElements();
   });
 
 function addNameInForm(photographer) {
@@ -57,7 +54,7 @@ function addNameInForm(photographer) {
 }
 
 function addPhotographerPortfolio(media) {
-  portfolio.innerHTML += `<div class="image-card">
+  portfolio.innerHTML += `<div class="image-card" data-date="${media.date}" data-likes="${media.likes}" data-title="${media.title}">
   ${factoryMedia(media, portfolio)}
   <div class="info-card">
     <p class ="image-name">${media.title}</p>
@@ -92,5 +89,3 @@ function addPhotographerPrice(photographer) {
   prices.textContent = photographer.price + "€/jour";
   console.log(prices);
 }
-
-

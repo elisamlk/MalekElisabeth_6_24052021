@@ -351,7 +351,7 @@ aside .btn-submit {
 }
 
 .error {
-  color: white;
+  color: black;
 }
 
 @keyframes modalopen {
@@ -367,6 +367,30 @@ aside .btn-submit {
   aside {
     width: 300px;
   }
+}
+.lightbox {
+  display: none;
+  position: fixed;
+  background-color: white;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.lightbox-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.lightbox.show {
+  display: initial;
+}
+
+.lightbox-close {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -33,28 +33,31 @@ fetch("../data/FishEyeData.json")
       }
     }
     let contactBtn = document.querySelector(".contact-btn");
-    console.log(contactBtn);
+    //console.log(contactBtn);
     contactBtn.addEventListener("click", function () {
       modalForm.style.display = "block";
     });
     let closeBtn = document.querySelector(".fas");
-    console.log(closeBtn);
+    //console.log(closeBtn);
     closeBtn.addEventListener("click", function () {
       modalForm.style.display = "none";
     });
 
     manageLikes();
     sortElements();
+    displayLightbox();
+    
   });
 
 function addNameInForm(photographer) {
   let photographerName = document.getElementById("test");
   photographerName.textContent = photographer.name;
-  console.log(photographerName);
 }
 
 function addPhotographerPortfolio(media) {
-  portfolio.innerHTML += `<div class="image-card" data-date="${media.date}" data-likes="${media.likes}" data-title="${media.title}">
+  portfolio.innerHTML += `<div class="image-card" data-date="${
+    media.date
+  }" data-likes="${media.likes}" data-title="${media.title}">
   ${factoryMedia(media, portfolio)}
   <div class="info-card">
     <p class ="image-name">${media.title}</p>
@@ -87,5 +90,5 @@ function addPhotographerProfil(photographer) {
 function addPhotographerPrice(photographer) {
   let prices = document.getElementById("price-bottom");
   prices.textContent = photographer.price + "€/jour";
-  console.log(prices);
+  //console.log(prices);
 }

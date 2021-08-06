@@ -1,3 +1,6 @@
+let orderPortfolio = document.querySelector(".portfolio");
+console.log(orderPortfolio);
+
 function sortElements() {
   let filters = document.getElementById("media-select");
   console.log(filters);
@@ -7,7 +10,7 @@ function sortElements() {
       sortByPopularity();
     } else if (optionSelected == "Date") {
       sortByDate();
-    }else if(optionSelected == "Titre") {
+    } else if (optionSelected == "Titre") {
       sortByTitle();
     }
   });
@@ -27,10 +30,47 @@ function sortByPopularity() {
   }
 }
 
-function sortByDate(){
-  console.log("hello");
+/*function sortByTitle() {
+  let imageTitles = document.querySelectorAll("[data-title]");
+  console.log(imageTitles);
+  let arrayOfTitle = [];
+  for (let imageTitle of imageTitles.values()) {
+    console.log(imageTitle);
+    let dataTitle = imageTitle.dataset.title;
+
+   
+    //arrayOfTitle.push(dataTitle);
+    arrayOfTitle.sort(function (a, b) {
+      return a.localeCompare(b);
+    });
+    console.log(arrayOfTitle);
+
+  }
+}
+*/
+
+function sortByDate() {
+  let imageDate = document.querySelectorAll("[data-date]");
+  let arrayOfDate = [];
+  for (let i in imageDate) {
+    let dataDate = imageDate[i].dataset.date;
+    console.log(dataDate);
+  }
 }
 
-function sortByTitle(){
-  console.log("hello");
+function sortByTitle() {
+  let imageTitles = document.querySelectorAll("[data-title]");
+  console.log(imageTitles);
+  let arrayOfTitle = [];
+  for (let imageTitle of imageTitles.values()) {
+    console.log(imageTitle);
+    let dataTitle = imageTitle.dataset.title;
+    console.log(dataTitle);
+    arrayOfTitle.push(dataTitle);
+    console.log(arrayOfTitle);
+    arrayOfTitle.sort(function (a, b) {
+      return a.localeCompare(b);
+      
+    });
+  }
 }

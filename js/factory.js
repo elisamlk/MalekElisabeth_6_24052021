@@ -21,7 +21,7 @@ function factoryMedia(media, type) {
       }" alt="${media.title}">
       </div>`;
   } else if (media.hasOwnProperty("video")) {
-    return `<div class="links">
+    return `<div class="links links-video">
     <video class="image-media" controls src="${
       "../img/" + id + "/" + media.video
     }" alt="${media.title}"></video>

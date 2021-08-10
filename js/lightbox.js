@@ -1,14 +1,14 @@
 function displayLightbox() {
   let lightbox = document.querySelector(".lightbox");
   let lightboxClose = document.querySelector(".lightbox-close");
-  console.log(lightboxClose);
-  //console.log(lightbox);
+  let lightboxNext = document.querySelector(".fa-chevron-right");
+  let lightboxPrev = document.querySelector(".fa-chevron-left");
   let lightboxMedias = document.querySelectorAll(".links");
   // On écoute l'évenement sur les medias
   for (let lightboxMedia of lightboxMedias) {
     //console.log(lightboxMedia)
     lightboxMedia.addEventListener("click", function () {
-      console.log(lightboxMedia)
+      console.log(lightboxMedia);
       
       //let mediaType = document.querySelector(".media-type");
 

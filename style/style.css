@@ -406,4 +406,9 @@ aside .btn-submit {
   z-index: 10;
 }
 
+.media-type img {
+  width: 400px;
+  height: 400px;
+}
+
 /*# sourceMappingURL=style.css.map */

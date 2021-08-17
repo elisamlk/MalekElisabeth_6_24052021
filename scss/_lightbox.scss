@@ -1,5 +1,5 @@
 .lightbox {
-    display: none;
+  display: none;
   position: fixed;
   background-color: white;
   left: 0;
@@ -11,29 +11,32 @@
 .lightbox-content {
   display: flex;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   height: 100vh;
 }
 
-.lightbox.show{
-    display: initial;
+.lightbox.show {
+  display: initial;
 }
 
-.lightbox-close{
+.lightbox-close {
   cursor: pointer;
 }
 
-.links-video{
-  position:relative;
-  &::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:10;
+.links-video {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
   }
-  
 }
 
+.media-type img{
+  width:400px;
+  height: 400px;
+}

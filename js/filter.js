@@ -1,6 +1,3 @@
-let orderPortfolio = document.querySelector(".portfolio");
-console.log(orderPortfolio);
-
 function sortElements() {
   let filters = document.getElementById("media-select");
   console.log(filters);
@@ -16,61 +13,36 @@ function sortElements() {
   });
 }
 
+function sortByTitle() {
+  let imageTitle = document.querySelectorAll("[data-title]");
+  Array.from(imageTitle)
+    .sort((a, b) =>
+      a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase())
+    )
+    .forEach((el) =>
+      el.closest(".portfolio").appendChild(el.closest(".image-card"))
+    );
+}
+
 function sortByPopularity() {
   let imageLikes = document.querySelectorAll("[data-likes");
-  let arrayOfLikes = [];
-  for (let i in imageLikes) {
-    let dataLikes = parseInt(imageLikes[i].dataset.likes);
-    console.log(dataLikes);
-    arrayOfLikes.push(dataLikes);
-    arrayOfLikes.sort(function (a, b) {
-      return b - a;
-    });
-    console.log(arrayOfLikes);
-  }
+  Array.from(imageLikes)
+    .sort((a, b) => b.dataset.likes - a.dataset.likes)
+    .forEach((el) =>
+      el.closest(".portfolio").appendChild(el.closest(".image-card"))
+    );
 }
-
-/*function sortByTitle() {
-  let imageTitles = document.querySelectorAll("[data-title]");
-  console.log(imageTitles);
-  let arrayOfTitle = [];
-  for (let imageTitle of imageTitles.values()) {
-    console.log(imageTitle);
-    let dataTitle = imageTitle.dataset.title;
-
-   
-    //arrayOfTitle.push(dataTitle);
-    arrayOfTitle.sort(function (a, b) {
-      return a.localeCompare(b);
-    });
-    console.log(arrayOfTitle);
-
-  }
-}
-*/
 
 function sortByDate() {
   let imageDate = document.querySelectorAll("[data-date]");
-  let arrayOfDate = [];
-  for (let i in imageDate) {
-    let dataDate = imageDate[i].dataset.date;
-    console.log(dataDate);
-  }
-}
-
-function sortByTitle() {
-  let imageTitles = document.querySelectorAll("[data-title]");
-  console.log(imageTitles);
-  let arrayOfTitle = [];
-  for (let imageTitle of imageTitles.values()) {
-    console.log(imageTitle);
-    let dataTitle = imageTitle.dataset.title;
-    console.log(dataTitle);
-    arrayOfTitle.push(dataTitle);
-    console.log(arrayOfTitle);
-    arrayOfTitle.sort(function (a, b) {
-      return a.localeCompare(b);
-      
-    });
-  }
+  Array.from(imageDate)
+    .sort((a, b) => {
+      let dateA = new Date(a.dataset.date);
+      //console.log(dateA)
+      let dateB = new Date(b.dataset.date);
+      return dateB - dateA;
+    })
+    .forEach((el) =>
+      el.closest(".portfolio").appendChild(el.closest(".image-card"))
+    );
 }

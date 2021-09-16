@@ -1,13 +1,13 @@
-import { getData } from "./modules/getData.js";
 import { Photographer } from "./class/Photographer.js";
 import { MediaFactory } from "./class/MediaFactory.js";
 import { sortElements } from "./modules/filter.js";
 import { manageLikes } from "./modules/likes.js";
 import { displayLightbox } from "./modules/lightbox.js";
 import { manageForm } from "./modules/form.js";
+import { getDataSecond } from "./modules/getData.js";
 
 function displayPhotographerWork() {
-  getData().then((data) => {
+  getDataSecond().then((data) => {
     let photographers = data.photographers;
     let medias = data.media;
     let params = new URLSearchParams(document.location.search);

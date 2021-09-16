@@ -16,7 +16,7 @@ export class Photographer {
       .map((tag) => `${tag}`)
       .join(" ")}">
         <a class="link" href="html/photographer.html?id=${this.id}">
-          <img src="/img/photographers/${this.portrait}" alt="">
+          <img src="./img/photographers/${this.portrait}" alt="">
           <h2>${this.name}</h2>
         </a>
         <div class="location">

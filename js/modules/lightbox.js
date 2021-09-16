@@ -1,14 +1,11 @@
-function displayLightbox() {
+export function displayLightbox() {
   let lightbox = document.querySelector(".lightbox");
   let lightboxMedias = document.querySelectorAll(".links");
   let lightboxClose = document.querySelector(".lightbox-close");
   let lightboxNext = document.querySelector(".fa-chevron-right");
   let lightboxPrev = document.querySelector(".fa-chevron-left");
-
   let lightboxArray = Array.from(lightboxMedias);
-  console.log(lightboxArray);
   let lastImageIndex = lightboxArray.length - 1;
-  console.log(lastImageIndex);
 
   for (let lightboxMedia of lightboxMedias) {
     lightboxMedia.addEventListener("click", function () {

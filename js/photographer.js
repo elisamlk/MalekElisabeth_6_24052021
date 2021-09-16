@@ -1,94 +1,36 @@
-const photographerInfo = document.querySelector(".photographer-info");
-const portfolio = document.querySelector(".portfolio");
-let params = new URLSearchParams(document.location.search);
-//console.log(params);
-let id = params.get("id");
-//console.log(id);
+import { getData } from "./modules/getData.js";
+import { Photographer } from "./class/Photographer.js";
+import { MediaFactory } from "./class/MediaFactory.js";
+import { sortElements } from "./modules/filter.js";
+import { manageLikes } from "./modules/likes.js";
+import { displayLightbox } from "./modules/lightbox.js";
+import { manageForm } from "./modules/form.js";
 
-//console.log(photographerInfo);
-//console.log(portfolio);
-let modalForm = document.querySelector("aside");
-
-fetch("../data/FishEyeData.json")
-  .then((response) => response.json())
-  .then((data) => {
+function displayPhotographerWork() {
+  getData().then((data) => {
     let photographers = data.photographers;
     let medias = data.media;
-    //console.log(photographers);
-    //console.log(medias);
+    let params = new URLSearchParams(document.location.search);
+    let id = params.get("id");
     for (let i in photographers) {
       let photographerId = photographers[i].id;
       if (photographerId == id) {
-        addPhotographerProfil(photographers[i]);
-        addNameInForm(photographers[i]);
-        addPhotographerPrice(photographers[i]);
+        new Photographer(photographers[i]).createPhotographerProfil();
+        new Photographer(photographers[i]).addPhotographerPrice();
+        new Photographer(photographers[i]).addNameInForm();
       }
     }
     for (let i in medias) {
       let mediaId = medias[i].photographerId;
-      //console.log(mediaId);
       if (mediaId == id) {
-        addPhotographerPortfolio(medias[i]);
-        
+        new MediaFactory(medias[i]).addPhotographerPortfolio();
       }
     }
-    let contactBtn = document.querySelector(".contact-btn");
-    //console.log(contactBtn);
-    contactBtn.addEventListener("click", function () {
-      modalForm.style.display = "block";
-    });
-    let closeBtn = document.querySelector(".fas");
-    //console.log(closeBtn);
-    closeBtn.addEventListener("click", function () {
-      modalForm.style.display = "none";
-    });
-
-    manageLikes();
     sortElements();
+    manageLikes();
     displayLightbox();
-    
+    manageForm();
   });
-
-function addNameInForm(photographer) {
-  let photographerName = document.getElementById("test");
-  photographerName.textContent = photographer.name;
 }
 
-function addPhotographerPortfolio(media) {
-  portfolio.innerHTML += `<div class="image-card" data-date="${
-    media.date
-  }" data-likes="${media.likes}" data-title="${media.title}">
-  ${factoryMedia(media, portfolio)}
-  <div class="info-card">
-    <p class ="image-name">${media.title}</p>
-    <div class="info-container">
-      <p class="image-likes">${media.likes}</p> 
-      <i class="far fa-heart like-button"></i>
-    </div>
-  </div>
-  </div>`;
-}
-
-function addPhotographerProfil(photographer) {
-  photographerInfo.innerHTML += `<div class="info">
-    <h2>${photographer.name}</h2>
-      <div class="location">
-        <p class="city">${photographer.city},</p>
-        <p class="country">${photographer.country}</p>
-      </div>
-      <p class="tagline">${photographer.tagline}</p>
-      <ul class="tags">${photographer.tags
-        .map((tag) => `<li class="tags-list"${tag}">#${tag}</li>`)
-        .join(" ")}
-      </div>
-      <button class="contact-btn">Contactez-moi</button>
-      <img class="id-photo" src="../img/photographers/${
-        photographer.portrait
-      }" alt="">`;
-}
-
-function addPhotographerPrice(photographer) {
-  let prices = document.getElementById("price-bottom");
-  prices.textContent = photographer.price + "€/jour";
-  //console.log(prices);
-}
+displayPhotographerWork();

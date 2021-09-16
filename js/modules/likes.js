@@ -1,4 +1,4 @@
-function manageLikes() {
+export function manageLikes() {
   let totalLikesDisplay = document.getElementById("total-likes");
   let likeButtons = document.querySelectorAll(".like-button");
   let arrayOfLikes = [];

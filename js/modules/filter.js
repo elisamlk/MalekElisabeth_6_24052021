@@ -1,6 +1,5 @@
-function sortElements() {
+export function sortElements() {
   let filters = document.getElementById("media-select");
-  console.log(filters);
   filters.addEventListener("change", function () {
     let optionSelected = filters.value;
     if (optionSelected == "Popularité") {
@@ -13,7 +12,7 @@ function sortElements() {
   });
 }
 
-function sortByTitle() {
+ function sortByTitle() {
   let imageTitle = document.querySelectorAll("[data-title]");
   Array.from(imageTitle)
     .sort((a, b) =>

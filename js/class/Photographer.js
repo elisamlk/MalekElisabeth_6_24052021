@@ -15,7 +15,7 @@ export class Photographer {
     photographerDisplay.innerHTML += `<section class="photographer-card ${this.tags
       .map((tag) => `${tag}`)
       .join(" ")}">
-        <a class="link" href="../html/photographer.html?id=${this.id}">
+        <a class="link" href="./html/photographer.html?id=${this.id}">
           <img src="./img/photographers/${this.portrait}" alt="">
           <h2>${this.name}</h2>
         </a>

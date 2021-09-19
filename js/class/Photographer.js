@@ -48,7 +48,7 @@ export class Photographer {
         .join(" ")}
       </div>
       <button class="contact-btn">Contactez-moi</button>
-      <img class="id-photo" src="./img/photographers/${
+      <img class="id-photo" src="../img/photographers/${
         this.portrait
       }" alt="">`;
   }

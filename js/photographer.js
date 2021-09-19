@@ -6,7 +6,7 @@ import { displayLightbox } from "./modules/lightbox.js";
 import { manageForm } from "./modules/form.js";
 
 function displayPhotographerWork() {
-  fetch("/data/FishEyeData.json")
+  fetch("../data/FishEyeData.json")
     .then((response) => response.json())
     .then((data) => {
       let photographers = data.photographers;

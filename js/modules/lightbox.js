@@ -57,6 +57,14 @@ export function displayLightbox() {
         lightbox.classList.remove("show");
         mediaType.innerHTML = "";
       });
+
+      document.addEventListener("keydown", (event) => {
+        let nomTouche = event.key;
+        if (nomTouche === "Escape") {
+          lightbox.classList.remove("show");
+          mediaType.innerHTML = "";
+        }
+      });
     });
   }
 }

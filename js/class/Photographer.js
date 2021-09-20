@@ -39,8 +39,8 @@ export class Photographer {
     photographerInfo.innerHTML += `<div class="info">
     <h2>${this.name}</h2>
       <div class="location">
-        <p class="city">${this.city},</p>
-        <p class="country">${this.country}</p>
+        <h3 class="city">${this.city},</h3>
+        <h3 class="country">${this.country}</h3>
       </div>
       <p class="tagline">${this.tagline}</p>
       <ul class="tags">${this.tags
@@ -59,7 +59,7 @@ export class Photographer {
   }
 
   addNameInForm() {
-    let photographerName = document.getElementById("test");
+    let photographerName = document.getElementById("form-name");
     photographerName.textContent = this.name;
   }
 }

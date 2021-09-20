@@ -58,11 +58,43 @@ export function displayLightbox() {
         mediaType.innerHTML = "";
       });
 
+      // Fermeture et défilement des photos avec les touches du clavier
       document.addEventListener("keydown", (event) => {
-        let nomTouche = event.key;
-        if (nomTouche === "Escape") {
+        let keyName = event.key;
+        if (keyName === "Escape") {
           lightbox.classList.remove("show");
           mediaType.innerHTML = "";
+        } else if (keyName === "ArrowLeft") {
+          mediaType.innerHTML = "";
+          let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
+          if (currentIndex != 0) {
+            let clone = lightboxArray[currentIndex - 1].cloneNode(true);
+            mediaType.append(clone);
+            mediaType.setAttribute("currentIndex", currentIndex - 1);
+          } else if (currentIndex == 0) {
+            mediaType.innerHTML = "";
+            mediaType.append(lightboxArray[lastImageIndex].cloneNode(true));
+            mediaType.setAttribute(
+              "currentIndex",
+              currentIndex + lastImageIndex
+            );
+          }
+        } else if (keyName === "ArrowRight") {
+          mediaType.innerHTML = "";
+          let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
+          console.log(currentIndex);
+          if (currentIndex != lastImageIndex) {
+            let clone = lightboxArray[currentIndex + 1].cloneNode(true);
+            mediaType.append(clone);
+            mediaType.setAttribute("currentIndex", currentIndex + 1);
+          } else {
+            mediaType.innerHTML = "";
+            mediaType.append(lightboxArray[0].cloneNode(true));
+            mediaType.setAttribute(
+              "currentIndex",
+              currentIndex - lastImageIndex
+            );
+          }
         }
       });
     });

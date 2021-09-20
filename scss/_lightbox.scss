@@ -33,20 +33,23 @@
 }
 
 .media-type img {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 
 .media-type video {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 
 .lightbox-close {
   color: $primary-color;
   font-size: 30px;
-
   cursor: pointer;
+  position:fixed;
+  right:0;
+  padding:50px;
+  
 }
 
 .fa-chevron-right,
@@ -56,27 +59,20 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .media-type img {
-    width: 400px;
-    height: 400px;
-  }
-
-  .media-type video {
-    width: 400px;
-    height: 400px;
-  }
-}
-
 @media screen and (max-width: 576px) {
   .media-type img {
     width: 250px;
     height: 250px;
   }
-
   .media-type video {
     width: 250px;
     height: 250px;
   }
+  .fa-chevron-right,
+  .fa-chevron-left {
+    font-size: 20px;
+  }
+  .lightbox-close{
+    font-size: 20px;
+  }
 }
-

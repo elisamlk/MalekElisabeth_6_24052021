@@ -313,7 +313,6 @@ body {
 }
 */
 aside {
-  background-color: blue;
   animation-name: modalopen;
   animation-duration: 1s;
   position: fixed;
@@ -358,7 +357,7 @@ aside .btn-submit {
   border-radius: 5px;
 }
 .formData .message-control {
-  height: 80px;
+  height: 70px;
 }
 
 .error {
@@ -414,19 +413,22 @@ aside .btn-submit {
 }
 
 .media-type img {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 
 .media-type video {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
 }
 
 .lightbox-close {
   color: #901C1C;
   font-size: 30px;
   cursor: pointer;
+  position: fixed;
+  right: 0;
+  padding: 50px;
 }
 
 .fa-chevron-right,
@@ -436,17 +438,6 @@ aside .btn-submit {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .media-type img {
-    width: 400px;
-    height: 400px;
-  }
-
-  .media-type video {
-    width: 400px;
-    height: 400px;
-  }
-}
 @media screen and (max-width: 576px) {
   .media-type img {
     width: 250px;
@@ -456,6 +447,15 @@ aside .btn-submit {
   .media-type video {
     width: 250px;
     height: 250px;
+  }
+
+  .fa-chevron-right,
+.fa-chevron-left {
+    font-size: 20px;
+  }
+
+  .lightbox-close {
+    font-size: 20px;
   }
 }
 

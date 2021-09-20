@@ -24,9 +24,9 @@
       </a>
     </header>
     <main class="photographer-page">
-      <section class="photographer-info"></section>
+      <section class="photographer-info" aria-label="photographer information"></section>
 
-      <section>
+      <section aria-label="photographer work">
         <div class="photographer-work">
           <p>Triez par</p>
           <select name="medias" id="media-select">
@@ -80,7 +80,7 @@
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
-            <input class="message-control" id="message" name="message" />
+            <input class="message-control" id="message" name="message" placeholder="Votre message..." />
             <span class="message-error error"></span>
           </div>
           <input class="btn-submit" type="submit" value="Envoyez" />

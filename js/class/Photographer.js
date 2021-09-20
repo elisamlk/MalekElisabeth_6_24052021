@@ -14,9 +14,9 @@ export class Photographer {
     let photographerDisplay = document.querySelector(".photographer-display");
     photographerDisplay.innerHTML += `<section class="photographer-card ${this.tags
       .map((tag) => `${tag}`)
-      .join(" ")}">
+      .join(" ")}" aria-label = "photographers">
         <a class="link" href="./html/photographer.html?id=${this.id}">
-          <img src="./img/photographers/${this.portrait}" alt="">
+          <img src="./img/photographers/${this.portrait}" alt="${this.name} portrait">
           <h2>${this.name}</h2>
         </a>
         <div class="location">
@@ -36,7 +36,7 @@ export class Photographer {
 
   createPhotographerProfil() {
     let photographerInfo = document.querySelector(".photographer-info");
-    photographerInfo.innerHTML += `<div class="info">
+    photographerInfo.innerHTML += `<div class="info" aria-label="photographer profil">
     <h2>${this.name}</h2>
       <div class="location">
         <h3 class="city">${this.city},</h3>
@@ -50,7 +50,7 @@ export class Photographer {
       <button class="contact-btn">Contactez-moi</button>
       <img class="id-photo" src="../img/photographers/${
         this.portrait
-      }" alt="">`;
+      }" alt="${this.name}">`;
   }
 
   addPhotographerPrice() {

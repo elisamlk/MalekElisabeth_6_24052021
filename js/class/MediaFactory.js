@@ -10,7 +10,7 @@ export class MediaFactory {
     ${this.createMedia()}
     <div class="info-card">
       <p class ="image-name">${this.media.title}</p>
-      <div class="info-container">
+      <div class="info-container" aria-label="photographer likes">
         <p class="image-likes">${this.media.likes}</p> 
         <i class="far fa-heart like-button"></i>
       </div>

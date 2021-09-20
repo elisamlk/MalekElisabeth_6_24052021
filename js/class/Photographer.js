@@ -20,8 +20,8 @@ export class Photographer {
           <h2>${this.name}</h2>
         </a>
         <div class="location">
-          <p class="city">${this.city},</p>
-          <p class="country">${this.country}</p> 
+          <h3 class="city">${this.city},</h3>
+          <h3 class="country">${this.country}</h3> 
         </div>
         <p class="tagline">${this.tagline}</p>
         <p class="price">${this.price}€/jour</p>

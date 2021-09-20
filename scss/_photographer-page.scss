@@ -9,6 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-bottom:60px;
 }
 
 .image-media {
@@ -127,10 +128,19 @@
   .photographer-page {
     padding: 5px;
   }
+ 
 }
 
 @media screen and (max-width: 768px) {
   .contact-btn {
+    position:fixed;
+    bottom: 0;
+    margin-bottom:30px;
+  }
+   .photographer-work{
+    display: none;
+  }
+  .bottom-section{
     display: none;
   }
 }

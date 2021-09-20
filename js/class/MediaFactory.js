@@ -29,14 +29,14 @@ export class MediaFactory {
   }
   createImage() {
     return `<div class= "links">
-    <img class="image-media" src="${
+    <img class="image-media" role="button" src="${
       "../img/" + this.media.photographerId + "/" + this.media.image
     }" alt="${this.media.title}">
     </div>`;
   }
   createVideo() {
     return `<div class="links links-video">
-      <video class="image-media" controls src="${
+      <video class="image-media" role="button" controls src="${
         "../img/" + this.media.photographerId + "/" + this.media.video
       }" alt="${this.media.title}"></video>
       </div>`;

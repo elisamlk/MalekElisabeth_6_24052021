@@ -87,7 +87,7 @@ export function manageForm() {
   contactBtn.addEventListener("click", function () {
     modalForm.style.display = "block";
   });
-  let closeBtn = document.querySelector(".fas");
+  let closeBtn = document.querySelector(".close-form");
   closeBtn.addEventListener("click", function () {
     modalForm.style.display = "none";
   });

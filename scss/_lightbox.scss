@@ -19,10 +19,6 @@
   display: initial;
 }
 
-.lightbox-close {
-  cursor: pointer;
-}
-
 .links-video {
   position: relative;
   &::before {
@@ -36,7 +32,51 @@
   }
 }
 
-.media-type img{
-  width:400px;
-  height: 400px;
+.media-type img {
+  width: 600px;
+  height: 600px;
 }
+
+.media-type video {
+  width: 600px;
+  height: 600px;
+}
+
+.lightbox-close {
+  color: $primary-color;
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.fa-chevron-right,
+.fa-chevron-left {
+  color: $primary-color;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .media-type img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .media-type video {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .media-type img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .media-type video {
+    width: 250px;
+    height: 250px;
+  }
+}
+

@@ -12,7 +12,7 @@ export function manageLikes() {
         let newValue = parseInt(initialValue[i].innerText) + 1;
         initialValue[i].innerText = newValue;
       } else {
-        newValue = parseInt(initialValue[i].innerText) - 1;
+        let newValue = parseInt(initialValue[i].innerText) - 1;
         initialValue[i].innerText = newValue;
       }
     });

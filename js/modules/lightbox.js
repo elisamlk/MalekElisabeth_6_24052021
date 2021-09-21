@@ -6,6 +6,41 @@ export function displayLightbox() {
   let lightboxPrev = document.querySelector(".fa-chevron-left");
   let lightboxArray = Array.from(lightboxMedias);
   let lastImageIndex = lightboxArray.length - 1;
+  let mediaType = document.querySelector(".media-type");
+
+  function closeLightbox() {
+    lightbox.classList.remove("show");
+    mediaType.innerHTML = "";
+  }
+
+  function slideRight() {
+    mediaType.innerHTML = "";
+    let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
+    console.log(currentIndex);
+    if (currentIndex != lastImageIndex) {
+      let clone = lightboxArray[currentIndex + 1].cloneNode(true);
+      mediaType.append(clone);
+      mediaType.setAttribute("currentIndex", currentIndex + 1);
+    } else {
+      mediaType.innerHTML = "";
+      mediaType.append(lightboxArray[0].cloneNode(true));
+      mediaType.setAttribute("currentIndex", currentIndex - lastImageIndex);
+    }
+  }
+
+  function slideLeft() {
+    mediaType.innerHTML = "";
+    let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
+    if (currentIndex != 0) {
+      let clone = lightboxArray[currentIndex - 1].cloneNode(true);
+      mediaType.append(clone);
+      mediaType.setAttribute("currentIndex", currentIndex - 1);
+    } else if (currentIndex == 0) {
+      mediaType.innerHTML = "";
+      mediaType.append(lightboxArray[lastImageIndex].cloneNode(true));
+      mediaType.setAttribute("currentIndex", currentIndex + lastImageIndex);
+    }
+  }
 
   for (let lightboxMedia of lightboxMedias) {
     lightboxMedia.addEventListener("click", function () {
@@ -23,78 +58,28 @@ export function displayLightbox() {
 
       //On fait défiler les photos vers la droite
       lightboxNext.addEventListener("click", function () {
-        mediaType.innerHTML = "";
-        let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
-        console.log(currentIndex);
-        if (currentIndex != lastImageIndex) {
-          let clone = lightboxArray[currentIndex + 1].cloneNode(true);
-          mediaType.append(clone);
-          mediaType.setAttribute("currentIndex", currentIndex + 1);
-        } else {
-          mediaType.innerHTML = "";
-          mediaType.append(lightboxArray[0].cloneNode(true));
-          mediaType.setAttribute("currentIndex", currentIndex - lastImageIndex);
-        }
+        slideRight();
       });
 
       //On fait défiler les photos vers la gauche
       lightboxPrev.addEventListener("click", function () {
-        mediaType.innerHTML = "";
-        let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
-        if (currentIndex != 0) {
-          let clone = lightboxArray[currentIndex - 1].cloneNode(true);
-          mediaType.append(clone);
-          mediaType.setAttribute("currentIndex", currentIndex - 1);
-        } else if (currentIndex == 0) {
-          mediaType.innerHTML = "";
-          mediaType.append(lightboxArray[lastImageIndex].cloneNode(true));
-          mediaType.setAttribute("currentIndex", currentIndex + lastImageIndex);
-        }
+        slideLeft();
       });
 
       // On retire la classe qui permet d'afficher la lightbox
       lightboxClose.addEventListener("click", function () {
-        lightbox.classList.remove("show");
-        mediaType.innerHTML = "";
+        closeLightbox();
       });
 
       // Fermeture et défilement des photos avec les touches du clavier
       document.addEventListener("keydown", (event) => {
         let keyName = event.key;
         if (keyName === "Escape") {
-          lightbox.classList.remove("show");
-          mediaType.innerHTML = "";
+          closeLightbox();
         } else if (keyName === "ArrowLeft") {
-          mediaType.innerHTML = "";
-          let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
-          if (currentIndex != 0) {
-            let clone = lightboxArray[currentIndex - 1].cloneNode(true);
-            mediaType.append(clone);
-            mediaType.setAttribute("currentIndex", currentIndex - 1);
-          } else if (currentIndex == 0) {
-            mediaType.innerHTML = "";
-            mediaType.append(lightboxArray[lastImageIndex].cloneNode(true));
-            mediaType.setAttribute(
-              "currentIndex",
-              currentIndex + lastImageIndex
-            );
-          }
+          slideLeft();
         } else if (keyName === "ArrowRight") {
-          mediaType.innerHTML = "";
-          let currentIndex = parseInt(mediaType.getAttribute("currentIndex"));
-          console.log(currentIndex);
-          if (currentIndex != lastImageIndex) {
-            let clone = lightboxArray[currentIndex + 1].cloneNode(true);
-            mediaType.append(clone);
-            mediaType.setAttribute("currentIndex", currentIndex + 1);
-          } else {
-            mediaType.innerHTML = "";
-            mediaType.append(lightboxArray[0].cloneNode(true));
-            mediaType.setAttribute(
-              "currentIndex",
-              currentIndex - lastImageIndex
-            );
-          }
+          slideRight();
         }
       });
     });

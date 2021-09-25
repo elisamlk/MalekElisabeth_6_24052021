@@ -103,4 +103,11 @@ export function manageForm() {
   closeBtn.addEventListener("click", function () {
     modalForm.style.display = "none";
   });
+
+  document.addEventListener("keydown", (event) => {
+    let keyName = event.key;
+    if (keyName === "Escape") {
+      modalForm.style.display = "none";
+    }
+  });
 }

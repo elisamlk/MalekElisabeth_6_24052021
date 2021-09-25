@@ -2,7 +2,10 @@ export function manageForm() {
   let modalForm = document.querySelector("aside");
   let form = document.querySelector("form");
   let regexNumber = /^([^0-9]*)$/;
-
+  let firstName = document.getElementById("first");
+  let lastName = document.getElementById("last");
+  let email = document.getElementById("email");
+  let message = document.getElementById("message");
   // Couleur à ajouter si les champs du formulaire sont correctement renseignés
   function isValid(validColor, deleteMessage) {
     validColor.style.borderColor = "green";
@@ -16,7 +19,6 @@ export function manageForm() {
 
   // Fonctions pour vérifier si les champs sont correctement renseignés
   function checkFirstName() {
-    let firstName = document.getElementById("first");
     let firstError = document.querySelector(".first-error");
     if (
       firstName.value.trim().length < 2 ||
@@ -32,7 +34,6 @@ export function manageForm() {
   }
 
   function checkLastName() {
-    let lastName = document.getElementById("last");
     let lastError = document.querySelector(".last-error");
     if (
       lastName.value.trim().length < 2 ||
@@ -48,7 +49,6 @@ export function manageForm() {
   }
 
   function checkEmail() {
-    let email = document.getElementById("email");
     let emailError = document.querySelector(".email-error");
     let emailRegex = /.+@.+\..+/;
     if (email.value.trim() == "" || !email.value.match(emailRegex)) {
@@ -61,7 +61,6 @@ export function manageForm() {
   }
 
   function checkMessage() {
-    let message = document.getElementById("message");
     let messageError = document.querySelector(".message-error");
     if (message.value.trim().length < 10) {
       isNotValid(message);
@@ -72,6 +71,15 @@ export function manageForm() {
     return true;
   }
 
+  // Fonction pour afficher les éléments fournis par l'utilisateur dans la console
+  function consoleMessage() {
+    console.group("Message du contact");
+    console.log("Prénom: " + firstName.value);
+    console.log("Nom: " + lastName.value);
+    console.log("Email: " + email.value);
+    console.log("Message: " + message.value);
+  }
+
   form.addEventListener("submit", function (e) {
     if (
       checkFirstName() == false ||
@@ -80,6 +88,10 @@ export function manageForm() {
       checkMessage() == false
     ) {
       e.preventDefault();
+    } else {
+      e.preventDefault();
+      consoleMessage();
+      modalForm.style.display = "none";
     }
   });
 

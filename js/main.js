@@ -1,5 +1,6 @@
 import { Photographer } from "./class/Photographer.js";
 import { tagFilter } from "./modules/tagFilter.js";
+import { scrollButton} from "./modules/scroll.js";
 
 function displayPhotographers() {
   fetch("data/FishEyeData.json")
@@ -10,6 +11,7 @@ function displayPhotographers() {
         new Photographer(photographers[i]).createCard();
       }
       tagFilter();
+      scrollButton();
     });
 }
 

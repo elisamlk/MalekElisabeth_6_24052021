@@ -124,6 +124,26 @@ h3 {
   display: none;
 }
 
+.photographer-content {
+  display: none;
+  top: 0;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  position: fixed;
+  background-color: #901C1C;
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 15px 10px 15px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.photographer-content:hover {
+  background-color: #D3573C;
+  color: black;
+}
+
 /*MEDIA QUERIES*/
 @media screen and (max-width: 768px) {
   .main-header img {

@@ -8,4 +8,8 @@ export function scrollButton() {
       scroll.style.display = "none";
     }
   });
+
+  scroll.addEventListener("click", function () {
+    document.documentElement.scrollTop = 0;
+  });
 }

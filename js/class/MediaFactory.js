@@ -19,8 +19,10 @@ export class MediaFactory {
   }
 
   createMedia() {
+    // eslint-disable-next-line no-prototype-builtins
     if (this.media.hasOwnProperty("image")) {
       return this.createImage();
+    // eslint-disable-next-line no-prototype-builtins
     } else if (this.media.hasOwnProperty("video")) {
       return this.createVideo();
     } else {

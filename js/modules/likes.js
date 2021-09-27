@@ -28,7 +28,7 @@ export function manageLikes() {
   totalLikesDisplay.innerHTML = sumTotalLikes;
 
   // Mise à jour de la somme totale des likes en prenant en compte les nouveaux "likes" likés
-  likeButtons.forEach((likeButton, i) => {
+  likeButtons.forEach((likeButton) => {
     likeButton.addEventListener("click", function () {
       let likedImage = document.getElementsByClassName("is-liked");
       //console.log(likedImage);

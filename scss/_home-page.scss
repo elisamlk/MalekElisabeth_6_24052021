@@ -73,6 +73,17 @@ body {
   }
 }
 
+h2 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.country {
+  margin-left: 5px;
+}
 .photographer-display {
   display: flex;
   flex-wrap: wrap;
@@ -95,8 +106,6 @@ body {
 .hide {
   display: none;
 }
-
-
 
 /*MEDIA QUERIES*/
 

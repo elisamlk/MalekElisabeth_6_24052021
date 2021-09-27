@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom:60px;
+  margin-bottom: 60px;
 }
 
 .image-media {
@@ -53,6 +53,14 @@
   h2 {
     color: $secondary-color;
     font-weight: 400;
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    margin-bottom: 5px;
+  }
+  .tagline {
+    margin-bottom: 5px;
   }
   .id-photo {
     width: 200px;
@@ -109,7 +117,7 @@
   display: flex;
   align-items: center;
   #total-likes {
-    margin-right:5px;
+    margin-right: 5px;
   }
 }
 
@@ -117,9 +125,13 @@
   .header-page img {
     @include logo-mobile;
   }
+
   .photographer-info .id-photo {
     width: 130px;
     height: 130px;
+  }
+  .photographer-info h2{
+    font-size:25px;
   }
   .photographer-info {
     background-color: white;
@@ -128,19 +140,18 @@
   .photographer-page {
     padding: 5px;
   }
- 
 }
 
 @media screen and (max-width: 768px) {
   .contact-btn {
-    position:fixed;
+    position: fixed;
     bottom: 0;
-    margin-bottom:30px;
+    margin-bottom: 30px;
   }
-   .photographer-work{
+  .photographer-work {
     display: none;
   }
-  .bottom-section{
+  .bottom-section {
     display: none;
   }
 }

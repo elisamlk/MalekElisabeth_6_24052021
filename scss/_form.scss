@@ -1,28 +1,22 @@
-/*Cacher le formulaire en respectant les bonnes pratiques d'accessibilité*/
-/*aside {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-*/
-
 aside {
-  animation-name:modalopen;
+  animation-name: modalopen;
   animation-duration: 1s;
   position: fixed;
   display: none;
   align-self: center;
   padding: 10px;
   min-width: 300px;
-  width:400px;
+  width: 400px;
   flex-basis: 100%;
   background-color: $secondary-color;
   border-radius: 5px;
+  h1{
+    font-weight: 400;
+    margin-bottom:10px;
+  }
+  h3{
+    font-size:25px;
+  }
   i {
     color: #fff;
     cursor: pointer;
@@ -53,8 +47,8 @@ aside {
   }
 }
 
-.error{
-  color:black;
+.error {
+  color: black;
 }
 
 @keyframes modalopen {
@@ -68,9 +62,7 @@ aside {
 }
 
 @media screen and (max-width: 546px) {
- aside{
-   width:300px;
- }
+  aside {
+    width: 300px;
+  }
 }
-
-

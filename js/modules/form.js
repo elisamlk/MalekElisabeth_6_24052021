@@ -6,6 +6,7 @@ export function manageForm() {
   let lastName = document.getElementById("last");
   let email = document.getElementById("email");
   let message = document.getElementById("message");
+  
   // Couleur à ajouter si les champs du formulaire sont correctement renseignés
   function isValid(validColor, deleteMessage) {
     validColor.style.borderColor = "green";

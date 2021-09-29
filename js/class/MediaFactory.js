@@ -30,17 +30,17 @@ export class MediaFactory {
     }
   }
   createImage() {
-    return `<div class= "links">
+    return `<a href="#" class= "links">
     <img class="image-media" role="button" src="${
       "../img/" + this.media.photographerId + "/" + this.media.image
     }" alt="${this.media.title}">
-    </div>`;
+    </a>`;
   }
   createVideo() {
-    return `<div class="links links-video">
+    return `<a href="#" class="links links-video">
       <video class="image-media" role="button" controls src="${
         "../img/" + this.media.photographerId + "/" + this.media.video
       }" alt="${this.media.title}"></video>
-      </div>`;
+      </a>`;
   }
 }

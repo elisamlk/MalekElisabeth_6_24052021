@@ -10,6 +10,7 @@ export class Photographer {
     this.tags = photographer.tags;
   }
 
+  // Création des sections photographes sur la page accueil
   createCard() {
     let photographerDisplay = document.querySelector(".photographer-display");
     photographerDisplay.innerHTML += `<section class="photographer-card ${this.tags
@@ -34,6 +35,7 @@ export class Photographer {
         </section>`;
   }
 
+  // Création du profil des photographes sur la page photographe
   createPhotographerProfil() {
     let photographerInfo = document.querySelector(".photographer-info");
     photographerInfo.innerHTML += `<div class="info" aria-label="photographer profil">

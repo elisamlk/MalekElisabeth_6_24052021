@@ -37,7 +37,6 @@ function sortByDate() {
   Array.from(imageDate)
     .sort((a, b) => {
       let dateA = new Date(a.dataset.date);
-      //console.log(dateA)
       let dateB = new Date(b.dataset.date);
       return dateB - dateA;
     })

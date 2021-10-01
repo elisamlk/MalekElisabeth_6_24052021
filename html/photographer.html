@@ -18,13 +18,18 @@
   </head>
 
   <body>
+    <!-- HEADER-->
     <header class="header-page">
       <a href="../index.html">
         <img src="../img/logo/logo.png" alt="FishEye Home Page" />
       </a>
     </header>
     <main class="photographer-page">
-      <section class="photographer-info" aria-label="photographer information"></section>
+      <!--PHOTOGRAPHERS-->
+      <section
+        class="photographer-info"
+        aria-label="photographer information"
+      ></section>
 
       <section aria-label="photographer work">
         <div class="photographer-work">
@@ -36,10 +41,12 @@
           </select>
         </div>
 
-        <div class="portfolio"></div>
+        <!--PORTFOLIO-->
+        <div class="portfolio" aria-label="photographer portfolio"></div>
       </section>
 
-      <aside class="modal" aria-hidden="true">
+      <!--FORM-->
+      <aside class="modal" aria-hidden="true" aria-label="contact form">
         <div class="top-form">
           <h1>Contactez-moi</h1>
           <i class="fas fa-times close-form"></i>
@@ -80,13 +87,19 @@
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
-            <input class="message-control" id="message" name="message" placeholder="Votre message..." />
+            <input
+              class="message-control"
+              id="message"
+              name="message"
+              placeholder="Votre message..."
+            />
             <span class="message-error error"></span>
           </div>
           <input class="btn-submit" type="submit" value="Envoyez" />
         </form>
       </aside>
 
+      <!--LIKES AND PRICE-->
       <div class="bottom-section" aria-label="photographer likes and price">
         <div class="bottom-total-likes">
           <p id="total-likes"></p>
@@ -95,9 +108,12 @@
         <p id="price-bottom"></p>
       </div>
 
-      <div class="lightbox">
-        <span class="lightbox-close" role="button"><i class="fas fa-times"></i></span>
-        <div class="lightbox-content">
+      <!-- LIGHTBOX-->
+      <div class="lightbox" aria-hidden="true" aria-label="lightbox-content">
+        <span class="lightbox-close" role="button"
+          ><i class="fas fa-times"></i
+        ></span>
+        <div class="lightbox-content" roel="dialog">
           <i class="fas fa-chevron-left" role="button"></i>
           <div class="media-type"></div>
           <i class="fas fa-chevron-right" role="button"></i>

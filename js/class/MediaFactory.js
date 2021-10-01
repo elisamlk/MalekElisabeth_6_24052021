@@ -2,6 +2,7 @@ export class MediaFactory {
   constructor(media) {
     this.media = media;
   }
+  // Ajout du portfolio des photographes 
   addPhotographerPortfolio() {
     let portfolio = document.querySelector(".portfolio");
     portfolio.innerHTML += `<div class="image-card" data-date="${

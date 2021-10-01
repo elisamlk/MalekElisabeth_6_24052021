@@ -6,16 +6,10 @@ export function manageForm() {
   let lastName = document.getElementById("last");
   let email = document.getElementById("email");
   let message = document.getElementById("message");
-  
-  // Couleur à ajouter si les champs du formulaire sont correctement renseignés
-  function isValid(validColor, deleteMessage) {
-    validColor.style.borderColor = "green";
-    deleteMessage.style.display = "none";
-  }
 
-  // Couleur à ajouter si les champs dont erronnés
-  function isNotValid(errorColor) {
-    errorColor.style.borderColor = "#fe142f";
+  // Message à supprimer si les champs sont correctement renseignés
+  function isValid(deleteMessage) {
+    deleteMessage.style.display = "none";
   }
 
   // Fonctions pour vérifier si les champs sont correctement renseignés
@@ -25,12 +19,11 @@ export function manageForm() {
       firstName.value.trim().length < 2 ||
       !firstName.value.match(regexNumber)
     ) {
-      isNotValid(firstName);
       firstError.innerHTML =
         "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
       return false;
     }
-    isValid(firstName, firstError);
+    isValid(firstError);
     return true;
   }
 
@@ -40,12 +33,11 @@ export function manageForm() {
       lastName.value.trim().length < 2 ||
       !lastName.value.match(regexNumber)
     ) {
-      isNotValid(lastName);
       lastError.innerHTML =
         "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
       return false;
     }
-    isValid(lastName, lastError);
+    isValid(lastError);
     return true;
   }
 
@@ -53,22 +45,20 @@ export function manageForm() {
     let emailError = document.querySelector(".email-error");
     let emailRegex = /.+@.+\..+/;
     if (email.value.trim() == "" || !email.value.match(emailRegex)) {
-      isNotValid(email);
       emailError.innerHTML = "Le format attendu n'est pas correct.";
       return false;
     }
-    isValid(email, emailError);
+    isValid(emailError);
     return true;
   }
 
   function checkMessage() {
     let messageError = document.querySelector(".message-error");
     if (message.value.trim().length < 10) {
-      isNotValid(message);
       messageError.innerHTML = "Veuillez entrer au moins 10 caractères";
       return false;
     }
-    isValid(message, messageError);
+    isValid(messageError);
     return true;
   }
 
